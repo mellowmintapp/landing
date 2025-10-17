@@ -1,12 +1,12 @@
 # Site settings
-title:
-email:
+title: MellowMint Apps
+email: mellowmint.app@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "" # the base hostname & protocol for your site
 
-twitter_username:
-github_username:
+twitter_username: mellowmintapp
+github_username: mellowmintapp
 
 # Build settings
 markdown: kramdown

@@ -42,3 +42,82 @@ $theme-dark: #222;
         "mixins",
         "base"
 ;
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&family=Quicksand:wght@400;600&display=swap');
+
+body {
+  font-family: 'Quicksand', Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  letter-spacing: 0.01em;
+  color: #222;
+  background: #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Fredoka', 'Quicksand', Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: #F05F40;
+  margin-top: 1.2em;
+  margin-bottom: 0.5em;
+}
+
+.navbar-brand, .btn, .section-heading {
+  font-family: 'Fredoka', 'Quicksand', Arial, Helvetica, sans-serif;
+  letter-spacing: 0.04em;
+}
+
+.header-logo {
+  height: 5vh;
+  width: auto;
+  display: block;
+  margin: 0 auto 2px auto;
+  object-fit: contain;
+}
+
+.portfolio-box {
+  border: 1px solid rgba(0,0,0,0.12); /* Thin subtle border */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* Elevation */
+  border-radius: 16px;
+  background: #fff;
+  overflow: hidden;
+  padding: 24px;
+}
+
+#apps .portfolio-box {
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  aspect-ratio: 1/1;
+  width: 100%;
+  height: auto;
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+}
+
+.portfolio-box img {
+  height: 400px;
+  width: 100%;
+  object-fit: contain;
+  background: #fff;
+}
+
+#apps .portfolio-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.portfolio-badge {
+  background: #F05F40;
+  color: #fff;
+  font-size: 1em;
+  padding: 6px 16px;
+  border-radius: 12px;
+  display: inline-block;
+}
