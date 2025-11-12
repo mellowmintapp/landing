@@ -7,10 +7,10 @@ A portfolio website showcasing mobile applications developed by MellowMint Apps.
 MellowMint Apps develops innovative mobile applications for iOS and Android platforms. Our current apps include:
 
 ### Memory by Seasons
-A journaling app that helps you capture memories and reflect on your life, season by season.
-- Easy seasonal journaling
-- Photo and note support
-- Reminders to reflect
+A memory board game where you flip tiles to match the correct ones, season by season.
+- Easy seasonal tile matching
+- Seasonal themes and scoring
+- Score tracking
 
 ### Closet Flow
 Organize your wardrobe, plan outfits, and simplify your mornings with Closet Flow.
@@ -47,7 +47,7 @@ This site is built with Jekyll. To run locally:
 
 ## Links
 
-- [Website](https://mellowmintapps.com) (placeholder)
+- [Website](https://mellowmintapps.com) 
 - [Twitter](https://twitter.com/mellowmintapp)
 - [GitHub](https://github.com/mellowmintapp)
 
