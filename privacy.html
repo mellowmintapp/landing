@@ -2,10 +2,97 @@
 layout: front
 title: Privacy Policy
 ---
-<section class="container" style="margin-top:40px;">
-  <h1 class="text-center">Privacy Policy for Mellowmint</h1>
-  <p class="text-center"><em>Last updated: October 16, 2025</em></p>
+
+<style>
+  .privacy-hero {
+    background: linear-gradient(135deg, #F05F40 0%, #e8491d 100%);
+    color: #fff;
+    padding: 90px 0 70px;
+    text-align: center;
+    position: relative;
+  }
+  .privacy-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0,0,0,0.18) 0%, rgba(0,0,0,0.12) 100%);
+    pointer-events: none;
+  }
+  .privacy-hero .container { position: relative; z-index: 1; }
+  .privacy-hero h1 {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 3em;
+    font-weight: 700;
+    margin: 0 0 10px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  }
+  .privacy-hero p.hero-subtitle {
+    font-size: 1.1em;
+    margin: 0;
+    color: #fff;
+    opacity: 0.98;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.25);
+  }
+
+  .privacy-card {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+    padding: 30px 26px;
+    max-width: 900px;
+    margin: -20px auto 60px; /* was -40px; move content down below header */
+  }
+  .privacy-card h2, .privacy-card h3 {
+    color: #2d3748;
+    margin-top: 18px;
+    font-weight: 700;
+  }
+  .privacy-card p, .privacy-card li {
+    color: #4a5568;
+    line-height: 1.7;
+    font-size: 1.05em;
+  }
+  .privacy-card ul { margin-left: 20px; }
+  .privacy-card a { color: #F05F40; font-weight: 600; text-decoration: none; }
+  .privacy-card a:hover { text-decoration: underline; }
+
+  .back-link { text-align: center; margin-top: 16px; }
+  .btn-primary-gradient {
+    background: linear-gradient(135deg, #F05F40 0%, #e8491d 100%);
+    color: #fff !important;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 22px;
+    font-weight: 600;
+    display: inline-block;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-decoration: none;
+  }
+  .btn-primary-gradient:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(240,95,64,0.35);
+    color: #fff !important;
+  }
+
+  @media (max-width: 768px) {
+    .privacy-hero h1 { font-size: 2.2em; }
+    .privacy-card { margin: 20px 16px 50px; padding: 24px 18px; } /* was -30px; ensure spacing on mobile */
+  }
+</style>
+
+<header class="privacy-hero" aria-label="Privacy Policy">
+  <div class="container">
+    <h1>Privacy Policy</h1>
+    <p class="hero-subtitle"><em>Last updated: December 11, 2025</em></p>
+  </div>
+</header>
+
+<section class="privacy-card" aria-labelledby="policy-title">
+  <h2 id="policy-title" class="sr-only">Mellowmint Privacy Policy</h2>
+
   <p>Mellowmint is committed to protecting your privacy. This Privacy Policy explains how our mobile applications (Memory by Seasons, Closet Flow, and others) handle your information.</p>
+
   <h3>1. Information We Do Not Collect</h3>
   <ul>
     <li>Personal data (name, email, phone number)</li>
@@ -14,18 +101,28 @@ title: Privacy Policy
     <li>Device identifiers</li>
   </ul>
   <p>Our apps are designed to be ad-free and do not use third-party tracking.</p>
+
   <h3>2. Optional Features</h3>
   <p>If future versions include optional features (e.g., cloud sync, account creation), we will update this policy and request your consent before collecting any data.</p>
+
   <h3>3. Children’s Privacy</h3>
   <p>Our apps are suitable for general audiences and do not knowingly collect data from children under 13.</p>
+
   <h3>4. Third-Party Services</h3>
   <p>We do not integrate third-party services that collect user data. If this changes, we will disclose it here.</p>
+
   <h3>5. Security</h3>
   <p>We take reasonable steps to ensure your data (if any is ever collected) is protected. Currently, our apps store all content locally on your device.</p>
+
   <h3>6. Changes to This Policy</h3>
   <p>We may update this Privacy Policy. Changes will be posted on our website and reflected in the app store listings.</p>
+
   <h3>7. Contact Us</h3>
   <p>For questions, contact:<br>
   📧 <a href="mailto:mellowmint.app@gmail.com">mellowmint.app@gmail.com</a><br>
   🌐 <a href="https://mellowmint.app">https://mellowmint.app</a></p>
+
+  <div class="back-link">
+    <a href="/" class="btn-primary-gradient" aria-label="Back to home">Back to Home</a>
+  </div>
 </section>

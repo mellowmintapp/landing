@@ -1,110 +1,399 @@
-<section class="no-padding" id="portfolio">
-  <div class="container-fluid">
+<style>
+  .portfolio-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  }
+
+  .portfolio-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .portfolio-header h2 {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 2.8em;
+    color: #2d3748;
+    margin-bottom: 15px;
+  }
+
+  .portfolio-header p {
+    font-size: 1.2em;
+    color: #4a5568;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .modern-portfolio-box {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+    height: 100%;
+  }
+
+  .modern-portfolio-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+  }
+
+  .portfolio-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 350px;
+    background: linear-gradient(135deg, #F05F40 0%, #e8491d 100%);
+  }
+
+  .portfolio-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  .modern-portfolio-box:hover .portfolio-image-wrapper img {
+    transform: scale(1.05);
+  }
+
+  .portfolio-content {
+    padding: 30px 25px;
+    text-align: center;
+  }
+
+  .portfolio-badge {
+    display: inline-block;
+    padding: 8px 18px;
+    background: linear-gradient(135deg, #F05F40 0%, #e8491d 100%);
+    color: white;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 600;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+  }
+
+  .portfolio-content h3 {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.8em;
+    color: #2d3748;
+    margin: 15px 0;
+  }
+
+  .portfolio-content p {
+    color: #4a5568;
+    font-size: 1.05em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  .portfolio-actions {
+    padding: 0 25px 30px;
+  }
+
+  .btn-view-app {
+    background: linear-gradient(135deg, #F05F40 0%, #e8491d 100%);
+    color: white;
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.95em;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    border: none;
+  }
+
+  .btn-view-app:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+    color: white;
+    text-decoration: none;
+  }
+
+  @media (max-width: 768px) {
+    .portfolio-header h2 {
+      font-size: 2em;
+    }
+
+    .portfolio-image-wrapper {
+      height: 250px;
+    }
+
+    .portfolio-content h3 {
+      font-size: 1.5em;
+    }
+  }
+</style>
+
+<section class="portfolio-section" id="portfolio">
+  <div class="container">
+    <div class="portfolio-header">
+      <h2>Our Mobile Apps</h2>
+      <p>Innovative applications designed to enhance your daily life</p>
+    </div>
     <div class="row">
       <!-- Memory by Seasons -->
-      <div class="col-md-6 col-sm-12">
-        <div class="portfolio-box">
-          <img src="img/portfolio/memory-by-seasons/Simulator Screenshot - iPhone 16 Plus - 2025-10-11 at 20.32.31.png" class="img-responsive" alt="Memory by Seasons screenshot">
-          <div class="card-body text-center" style="padding: 24px;">
-            <span class="badge portfolio-badge">Memory Game</span>
-            <h3 style="margin-top:16px; font-family:'Fredoka',sans-serif; color:#222;">Memory by Seasons</h3>
-            <p style="margin-top:10px; color:#555; font-size:1.1em;">A memory board game where you flip tiles to match the correct ones, season by season.</p>
+      <div class="col-md-4 col-sm-12" data-aos="fade-up" data-aos-duration="600">
+        <div class="modern-portfolio-box">
+          <div class="portfolio-image-wrapper">
+            <img src="img/portfolio/memory-by-seasons/Simulator Screenshot - iPhone 16 Plus - 2025-10-11 at 20.32.31.png" alt="Memory by Seasons screenshot">
+          </div>
+          <div class="portfolio-content">
+            <span class="portfolio-badge">🎮 Memory Game</span>
+            <h3>Memory by Seasons</h3>
+            <p>A memory board game where you flip tiles to match the correct ones, season by season.</p>
+          </div>
+          <div class="portfolio-actions text-center">
+            <a href="apps.html#memory-by-seasons" class="btn-view-app">Learn More</a>
           </div>
         </div>
       </div>
       <!-- Closet Flow -->
-      <div class="col-md-6 col-sm-12">
-        <div class="portfolio-box">
-          <img src="img/portfolio/closet-flow/dashboard.png" class="img-responsive" alt="Closet Flow screenshot">
-          <div class="card-body text-center" style="padding: 24px;">
-            <span class="badge portfolio-badge">Wardrobe Organizer</span>
-            <h3 style="margin-top:16px; font-family:'Fredoka',sans-serif; color:#222;">Closet Flow</h3>
-            <p style="margin-top:10px; color:#555; font-size:1.1em;">Organize your wardrobe, plan outfits, and simplify your mornings with Closet Flow.</p>
+      <div class="col-md-4 col-sm-12" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
+        <div class="modern-portfolio-box">
+          <div class="portfolio-image-wrapper">
+            <img src="img/portfolio/closet-flow/dashboard.png" alt="Closet Flow screenshot">
+          </div>
+          <div class="portfolio-content">
+            <span class="portfolio-badge">👗 Wardrobe Organizer</span>
+            <h3>Closet Flow</h3>
+            <p>Organize your wardrobe, plan outfits, and simplify your mornings with Closet Flow.</p>
+          </div>
+          <div class="portfolio-actions text-center">
+            <a href="apps.html#closet-flow" class="btn-view-app">Learn More</a>
           </div>
         </div>
       </div>
       <!-- Fun with Crosswords -->
-      <div class="col-md-6 col-sm-12">
-        <div class="portfolio-box">
-          <img src="img/portfolio/fun-with-crosswords/Simulator Screenshot - iPhone Air - 2025-11-16 at 23.38.30.png" class="img-responsive" alt="Fun with Crosswords screenshot">
-          <div class="card-body text-center" style="padding: 24px;">
-            <span class="badge portfolio-badge">Puzzle Game</span>
-            <h3 style="margin-top:16px; font-family:'Fredoka',sans-serif; color:#222;">Fun with Crosswords</h3>
-            <p style="margin-top:10px; color:#555; font-size:1.1em;">Challenge your mind with engaging crossword puzzles for all skill levels.</p>
+      <div class="col-md-4 col-sm-12" data-aos="fade-up" data-aos-duration="600" data-aos-delay="400">
+        <div class="modern-portfolio-box">
+          <div class="portfolio-image-wrapper">
+            <img src="img/portfolio/fun-with-crosswords/Simulator Screenshot - iPhone Air - 2025-11-16 at 23.38.30.png" alt="Fun with Crosswords screenshot">
+          </div>
+          <div class="portfolio-content">
+            <span class="portfolio-badge">🧩 Puzzle Game</span>
+            <h3>Fun with Crosswords</h3>
+            <p>Challenge your mind with engaging crossword puzzles for all skill levels.</p>
+          </div>
+          <div class="portfolio-actions text-center">
+            <a href="apps.html#fun-with-crosswords" class="btn-view-app">Learn More</a>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-<br/>
-<section class="no-padding" id="apps">
-    <div class="container-fluid">
-        <div class="row no-gutter">
-            <div class="col-lg-6 col-sm-6">
-                <div class="portfolio-box">
-                    <img src="img/portfolio/memory-by-seasons/Simulator Screenshot - iPhone 16 Plus - 2025-10-11 at 20.34.23.png" class="img-responsive" alt="Memory by Seasons screenshot">
-                    <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                            <div class="project-category text-faded">
-                                Featured App
-                            </div>
-                            <div class="project-name">
-                                Memory by Seasons
-                            </div>
-                            <p style="color:#fff;">A memory board game where you flip tiles to match the correct ones, season by season.</p>
-                            <a href="https://apps.apple.com/us/app/memory-by-seasons/id6753765713" class="btn btn-default btn-xs" style="margin-right:5px;">
-                                <i class="fa fa-apple"></i> App Store
-                            </a>
-                            <a href="https://play.google.com/store" class="btn btn-default btn-xs">
-                                <i class="fa fa-android"></i> Google Play
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 col-sm-6">
-                <div class="portfolio-box">
-                    <img src="img/portfolio/closet-flow/closet_brands.png" class="img-responsive" alt="Closet Flow screenshot">
-                    <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                            <div class="project-category text-faded">
-                                Featured App
-                            </div>
-                            <div class="project-name">
-                                Closet Flow
-                            </div>
-                            <p style="color:#fff;">Organize your wardrobe, plan outfits, and simplify your mornings with Closet Flow.</p>
-                            <a href="https://apps.apple.com/" class="btn btn-default btn-xs" style="margin-right:5px;">
-                                <i class="fa fa-apple"></i> App Store
-                            </a>
-                            <a href="https://play.google.com/store" class="btn btn-default btn-xs">
-                                <i class="fa fa-android"></i> Google Play
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 col-sm-6">
-                <div class="portfolio-box">
-                    <img src="img/portfolio/fun-with-crosswords/Simulator Screenshot - iPhone Air - 2025-11-16 at 23.38.41.png" class="img-responsive" alt="Fun with Crosswords screenshot">
-                    <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                            <div class="project-category text-faded">
-                                Featured App
-                            </div>
-                            <div class="project-name">
-                                Fun with Crosswords
-                            </div>
-                            <p style="color:#fff;">Challenge your mind with engaging crossword puzzles for all skill levels.</p>
-                            <a href="https://apps.apple.com/us/app/fun-with-crosswords/id1393761969" class="btn btn-default btn-xs" style="margin-right:5px;">
-                                <i class="fa fa-apple"></i> App Store
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<style>
+  .featured-apps-section {
+    padding: 80px 0;
+    background: white;
+  }
+
+  .featured-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .featured-header h2 {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 2.8em;
+    color: #2d3748;
+    margin-bottom: 15px;
+  }
+
+  .featured-header p {
+    font-size: 1.2em;
+    color: #4a5568;
+  }
+
+  .featured-app-box {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    height: 450px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+  }
+
+  .featured-app-box:hover {
+    transform: scale(1.02);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+  }
+
+  .featured-app-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  .featured-app-box:hover img {
+    transform: scale(1.1);
+  }
+
+  .featured-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.95) 0%, rgba(118, 75, 162, 0.95) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .featured-app-box:hover .featured-overlay {
+    opacity: 1;
+  }
+
+  .featured-content {
+    text-align: center;
+    padding: 30px;
+    transform: translateY(20px);
+    transition: transform 0.4s ease;
+  }
+
+  .featured-app-box:hover .featured-content {
+    transform: translateY(0);
+  }
+
+  .featured-badge {
+    display: inline-block;
+    padding: 8px 20px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 600;
+    margin-bottom: 15px;
+    backdrop-filter: blur(10px);
+  }
+
+  .featured-content h3 {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 2em;
+    color: white;
+    margin-bottom: 15px;
+  }
+
+  .featured-content p {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 25px;
+  }
+
+  .featured-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-store {
+    background: white;
+    color: #F05F40;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.95em;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+  }
+
+  .btn-store:hover {
+    background: #f7fafc;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    color: #F05F40;
+    text-decoration: none;
+  }
+
+  @media (max-width: 768px) {
+    .featured-header h2 {
+      font-size: 2em;
+    }
+
+    .featured-app-box {
+      height: 350px;
+    }
+
+    .featured-content h3 {
+      font-size: 1.5em;
+    }
+  }
+</style>
+
+<section class="featured-apps-section" id="apps">
+  <div class="container">
+    <div class="featured-header">
+      <h2>Featured Apps</h2>
+      <p>Download now and start exploring</p>
     </div>
+    <div class="row">
+      <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-duration="600">
+        <div class="featured-app-box">
+          <img src="img/portfolio/memory-by-seasons/Simulator Screenshot - iPhone 16 Plus - 2025-10-11 at 20.34.23.png" alt="Memory by Seasons screenshot">
+          <div class="featured-overlay">
+            <div class="featured-content">
+              <span class="featured-badge">🎮 Featured</span>
+              <h3>Memory by Seasons</h3>
+              <p>A memory board game where you flip tiles to match the correct ones, season by season.</p>
+              <div class="featured-buttons">
+                <a href="https://apps.apple.com/us/app/memory-by-seasons/id6753765713" class="btn-store">
+                  <i class="fa fa-apple"></i> App Store
+                </a>
+                <a href="https://play.google.com/store" class="btn-store">
+                  <i class="fa fa-android"></i> Google Play
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="200">
+        <div class="featured-app-box">
+          <img src="img/portfolio/closet-flow/closet_brands.png" alt="Closet Flow screenshot">
+          <div class="featured-overlay">
+            <div class="featured-content">
+              <span class="featured-badge">👗 Featured</span>
+              <h3>Closet Flow</h3>
+              <p>Organize your wardrobe, plan outfits, and simplify your mornings with Closet Flow.</p>
+              <div class="featured-buttons">
+                <a href="https://apps.apple.com/" class="btn-store">
+                  <i class="fa fa-apple"></i> App Store
+                </a>
+                <a href="https://play.google.com/store" class="btn-store">
+                  <i class="fa fa-android"></i> Google Play
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="400">
+        <div class="featured-app-box">
+          <img src="img/portfolio/fun-with-crosswords/Simulator Screenshot - iPhone Air - 2025-11-16 at 23.38.41.png" alt="Fun with Crosswords screenshot">
+          <div class="featured-overlay">
+            <div class="featured-content">
+              <span class="featured-badge">🧩 Featured</span>
+              <h3>Fun with Crosswords</h3>
+              <p>Challenge your mind with engaging crossword puzzles for all skill levels.</p>
+              <div class="featured-buttons">
+                <a href="https://apps.apple.com/us/app/fun-with-crosswords/id1393761969" class="btn-store">
+                  <i class="fa fa-apple"></i> App Store
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
-<br/>

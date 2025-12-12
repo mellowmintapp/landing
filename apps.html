@@ -2,13 +2,344 @@
 layout: front
 title: Apps
 ---
-<section class="container" style="margin-top:40px;">
-  <h1 class="text-center">Our Apps</h1>
-  <div class="row" style="margin-top:30px;">
+<style>
+  .apps-hero {
+    background: linear-gradient(135deg, #F05F40 0%, #e8491d 100%);
+    padding: 80px 0 60px;
+    color: white;
+    margin-bottom: 60px;
+  }
+
+  .apps-hero h1 {
+    font-size: 3em;
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-family: 'Fredoka', sans-serif;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  }
+
+  .apps-hero p {
+    font-size: 1.3em;
+    opacity: 1;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+  }
+
+  /* App Icon Styles */
+  .app-icon {
+    width: 100px;
+    height: 100px;
+    border-radius: 22px;
+    margin: 0 auto 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    background: linear-gradient(135deg, #F05F40 0%, #e8491d 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3em;
+  }
+
+  /* Lightbox Styles */
+  .lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.95);
+    overflow: auto;
+  }
+
+  .lightbox-content {
+    position: relative;
+    margin: 2% auto;
+    width: auto;
+    max-width: 90%;
+    max-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .lightbox-content img {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  }
+
+  .lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10000;
+    transition: all 0.3s ease;
+  }
+
+  .lightbox-close:hover {
+    color: #F05F40;
+    transform: scale(1.2);
+  }
+
+  .lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 50px;
+    cursor: pointer;
+    padding: 20px;
+    user-select: none;
+    transition: all 0.3s ease;
+  }
+
+  .lightbox-nav:hover {
+    color: #F05F40;
+    transform: translateY(-50%) scale(1.2);
+  }
+
+  .lightbox-prev {
+    left: 20px;
+  }
+
+  .lightbox-next {
+    right: 20px;
+  }
+
+  .lightbox-counter {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    background: rgba(0,0,0,0.5);
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 1em;
+  }
+
+  /* Click to expand hint */
+  .carousel-inner img {
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+  }
+
+  .carousel-inner img:hover {
+    opacity: 0.9;
+  }
+
+  .expand-hint {
+    text-align: center;
+    font-size: 0.85em;
+    color: #718096;
+    margin-top: 10px;
+    font-style: italic;
+  }
+
+  .expand-hint i {
+    margin-right: 5px;
+  }
+
+  .app-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    margin-bottom: 50px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .app-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+  }
+
+  .app-header {
+    padding: 30px 30px 20px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  }
+
+  .app-header h2 {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 2em;
+    margin: 0 0 10px;
+    color: #2d3748;
+  }
+
+  .app-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    background: rgba(240, 95, 64, 0.1);
+    color: #F05F40;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+
+  .app-description {
+    font-size: 1.1em;
+    color: #4a5568;
+    margin: 15px 0;
+  }
+
+  .carousel-container {
+    padding: 20px;
+    background: #f8f9fa;
+  }
+
+  .carousel-inner img {
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  }
+
+  .app-features {
+    padding: 25px 40px;
+  }
+
+  .app-features h3 {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    color: #2d3748;
+  }
+
+  .app-features ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 25px;
+  }
+
+  .app-features li {
+    padding: 10px 0;
+    font-size: 1.05em;
+    color: #4a5568;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .app-features li:last-child {
+    border-bottom: none;
+  }
+
+  .app-features li:before {
+    content: "✓";
+    color: #48bb78;
+    font-weight: bold;
+    margin-right: 12px;
+    font-size: 1.2em;
+  }
+
+  .app-actions {
+    padding: 0 40px 35px;
+  }
+
+  .btn-app-store {
+    background: linear-gradient(135deg, #F05F40 0%, #e8491d 100%);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 1.05em;
+    border: none;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+  .btn-app-store:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(240, 95, 64, 0.4);
+    color: white;
+  }
+
+  .btn-google-play {
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 1.05em;
+    border: none;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .btn-google-play:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(56, 239, 125, 0.4);
+    color: white;
+  }
+
+  .carousel-control {
+    background: none;
+    width: 40px;
+    height: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.7;
+  }
+
+  .carousel-control:hover {
+    opacity: 1;
+  }
+
+  .carousel-indicators li {
+    background-color: #cbd5e0;
+    border: none;
+  }
+
+  .carousel-indicators .active {
+    background: linear-gradient(135deg, #F05F40 0%, #e8491d 100%);
+  }
+
+  @media (max-width: 768px) {
+    .apps-hero h1 {
+      font-size: 2em;
+    }
+
+    .app-header h2 {
+      font-size: 1.5em;
+    }
+
+    .app-features,
+    .app-actions {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+</style>
+
+<div class="apps-hero">
+  <div class="container text-center">
+    <h1>Our Apps</h1>
+    <p>Discover our collection of innovative mobile applications</p>
+  </div>
+</div>
+
+<section class="container" style="padding-bottom: 80px;">
+  <div class="row">
     <!-- Memory by Seasons -->
-    <div class="col-md-6 text-center">
-      <h2>Memory by Seasons</h2>
-      <div id="carouselMemory" class="carousel slide" data-ride="carousel">
+    <div class="col-lg-6" id="memory-by-seasons" data-aos="fade-up" data-aos-duration="800">
+      <div class="app-card">
+        <div class="app-header text-center">
+          <div class="app-icon">🎮</div>
+          <span class="app-badge">Memory Game</span>
+          <h2>Memory by Seasons</h2>
+          <p class="app-description">A memory board game where you flip tiles to match the correct ones, season by season.</p>
+        </div>
+        <div class="carousel-container">
+          <p class="expand-hint"><i class="fa fa-search-plus"></i> Click any image to view full size</p>
+          <div id="carouselMemory" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#carouselMemory" data-slide-to="0" class="active"></li>
           <li data-target="#carouselMemory" data-slide-to="1"></li>
@@ -33,13 +364,13 @@ title: Apps
         </ol>
         <div class="carousel-inner">
           <div class="item active">
-            <img src="img/portfolio/memory-by-seasons/Simulator Screenshot - iPhone 16 Plus - 2025-10-11 at 20.32.31.png" alt="Memory by Seasons screenshot 1" style="width:50%;margin:0 auto;display:block;">
+            <img src="img/portfolio/memory-by-seasons/Simulator Screenshot - iPhone 16 Plus - 2025-10-11 at 20.32.31.png" alt="Memory by Seasons screenshot 1" style="width:50%;margin:0 auto;display:block;" onclick="openLightbox('memory', 0)">
           </div>
           <div class="item">
-            <img src="img/portfolio/memory-by-seasons/Simulator Screenshot - iPhone 16 Plus - 2025-10-11 at 20.32.40.png" alt="Memory by Seasons screenshot 2" style="width:50%;margin:0 auto;display:block;">
+            <img src="img/portfolio/memory-by-seasons/Simulator Screenshot - iPhone 16 Plus - 2025-10-11 at 20.32.40.png" alt="Memory by Seasons screenshot 2" style="width:50%;margin:0 auto;display:block;" onclick="openLightbox('memory', 1)">
           </div>
           <div class="item">
-            <img src="img/portfolio/memory-by-seasons/Simulator Screenshot - iPhone 16 Plus - 2025-10-11 at 20.32.54.png" alt="Memory by Seasons screenshot 3" style="width:50%;margin:0 auto;display:block;">
+            <img src="img/portfolio/memory-by-seasons/Simulator Screenshot - iPhone 16 Plus - 2025-10-11 at 20.32.54.png" alt="Memory by Seasons screenshot 3" style="width:50%;margin:0 auto;display:block;" onclick="openLightbox('memory', 2)">
           </div>
           <div class="item">
             <img src="img/portfolio/memory-by-seasons/Simulator Screenshot - iPhone 16 Plus - 2025-10-11 at 20.34.09.png" alt="Memory by Seasons screenshot 4" style="width:50%;margin:0 auto;display:block;">
@@ -99,22 +430,35 @@ title: Apps
         <a class="right carousel-control" href="#carouselMemory" data-slide="next">
           <span class="glyphicon glyphicon-chevron-right"></span>
         </a>
-      </div>
-      <p style="margin-top:15px;">A memory board game where you flip tiles to match the correct ones, season by season.</p>
-      <ul class="text-left" style="display:inline-block;">
-        <li>Easy seasonal tile matching</li>
-        <li>Seasonal themes and scoring</li>
-        <li>Score tracking</li>
-      </ul>
-      <div style="margin:10px 0;">
-        <a href="https://apps.apple.com/us/app/memory-by-seasons/id6753765713" class="btn btn-default" style="margin-right:10px;"><i class="fa fa-apple"></i> App Store</a>
-        <a href="https://play.google.com/store" class="btn btn-default"><i class="fa fa-android"></i> Google Play</a>
+          </div>
+        </div>
+        <div class="app-features">
+          <h3>Key Features</h3>
+          <ul>
+            <li>Easy seasonal tile matching</li>
+            <li>Seasonal themes and scoring</li>
+            <li>Score tracking</li>
+            <li>Beautiful seasonal graphics</li>
+          </ul>
+        </div>
+        <div class="app-actions text-center">
+          <a href="https://apps.apple.com/us/app/memory-by-seasons/id6753765713" class="btn-app-store"><i class="fa fa-apple"></i> App Store</a>
+          <a href="https://play.google.com/store" class="btn-google-play"><i class="fa fa-android"></i> Google Play</a>
+        </div>
       </div>
     </div>
     <!-- Closet Flow -->
-    <div class="col-md-6 text-center">
-      <h2>Closet Flow</h2>
-      <div id="carouselCloset" class="carousel slide" data-ride="carousel">
+    <div class="col-lg-6" id="closet-flow" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+      <div class="app-card">
+        <div class="app-header text-center">
+          <div class="app-icon">👗</div>
+          <span class="app-badge">Wardrobe Organizer</span>
+          <h2>Closet Flow</h2>
+          <p class="app-description">Organize your wardrobe, plan outfits, and simplify your mornings with Closet Flow.</p>
+        </div>
+        <div class="carousel-container">
+          <p class="expand-hint"><i class="fa fa-search-plus"></i> Click any image to view full size</p>
+          <div id="carouselCloset" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#carouselCloset" data-slide-to="0" class="active"></li>
           <li data-target="#carouselCloset" data-slide-to="1"></li>
@@ -132,13 +476,13 @@ title: Apps
         </ol>
         <div class="carousel-inner">
           <div class="item active">
-            <img src="img/portfolio/closet-flow/accessories_category.png" alt="Closet Flow screenshot 1" style="width:50%;margin:0 auto;display:block;">
+            <img src="img/portfolio/closet-flow/accessories_category.png" alt="Closet Flow screenshot 1" style="width:50%;margin:0 auto;display:block;" onclick="openLightbox('closet', 0)">
           </div>
           <div class="item">
-            <img src="img/portfolio/closet-flow/article_details.png" alt="Closet Flow screenshot 2" style="width:50%;margin:0 auto;display:block;">
+            <img src="img/portfolio/closet-flow/article_details.png" alt="Closet Flow screenshot 2" style="width:50%;margin:0 auto;display:block;" onclick="openLightbox('closet', 1)">
           </div>
           <div class="item">
-            <img src="img/portfolio/closet-flow/articles_by_brand.png" alt="Closet Flow screenshot 3" style="width:50%;margin:0 auto;display:block;">
+            <img src="img/portfolio/closet-flow/articles_by_brand.png" alt="Closet Flow screenshot 3" style="width:50%;margin:0 auto;display:block;" onclick="openLightbox('closet', 2)">
           </div>
           <div class="item">
             <img src="img/portfolio/closet-flow/articles_loading.png" alt="Closet Flow screenshot 4" style="width:50%;margin:0 auto;display:block;">
@@ -186,24 +530,37 @@ title: Apps
         <a class="right carousel-control" href="#carouselCloset" data-slide="next">
           <span class="glyphicon glyphicon-chevron-right"></span>
         </a>
-      </div>
-      <p style="margin-top:15px;">Organize your wardrobe, plan outfits, and simplify your mornings with Closet Flow.</p>
-      <ul class="text-left" style="display:inline-block;">
-        <li>Wardrobe cataloging</li>
-        <li>Outfit planning calendar</li>
-        <li>Style inspiration feed</li>
-      </ul>
-      <div style="margin:10px 0;">
-        <a href="https://apps.apple.com/" class="btn btn-default" style="margin-right:10px;"><i class="fa fa-apple"></i> App Store</a>
-        <a href="https://play.google.com/store" class="btn btn-default"><i class="fa fa-android"></i> Google Play</a>
+          </div>
+        </div>
+        <div class="app-features">
+          <h3>Key Features</h3>
+          <ul>
+            <li>Wardrobe cataloging</li>
+            <li>Outfit planning calendar</li>
+            <li>Style inspiration feed</li>
+            <li>Brand management</li>
+          </ul>
+        </div>
+        <div class="app-actions text-center">
+          <a href="https://apps.apple.com/" class="btn-app-store"><i class="fa fa-apple"></i> App Store</a>
+          <a href="https://play.google.com/store" class="btn-google-play"><i class="fa fa-android"></i> Google Play</a>
+        </div>
       </div>
     </div>
   </div>
-  <div class="row" style="margin-top:40px;">
+  <div class="row">
     <!-- Fun with Crosswords -->
-    <div class="col-md-6 text-center">
-      <h2>Fun with Crosswords</h2>
-      <div id="carouselCrosswords" class="carousel slide" data-ride="carousel">
+    <div class="col-lg-6" id="fun-with-crosswords" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+      <div class="app-card">
+        <div class="app-header text-center">
+          <div class="app-icon">🧩</div>
+          <span class="app-badge">Puzzle Game</span>
+          <h2>Fun with Crosswords</h2>
+          <p class="app-description">Challenge your mind with engaging crossword puzzles for all skill levels.</p>
+        </div>
+        <div class="carousel-container">
+          <p class="expand-hint"><i class="fa fa-search-plus"></i> Click any image to view full size</p>
+          <div id="carouselCrosswords" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#carouselCrosswords" data-slide-to="0" class="active"></li>
           <li data-target="#carouselCrosswords" data-slide-to="1"></li>
@@ -217,13 +574,13 @@ title: Apps
         </ol>
         <div class="carousel-inner">
           <div class="item active">
-            <img src="img/portfolio/fun-with-crosswords/Simulator Screenshot - iPhone Air - 2025-11-16 at 23.38.30.png" alt="Fun with Crosswords screenshot 1" style="width:50%;margin:0 auto;display:block;">
+            <img src="img/portfolio/fun-with-crosswords/Simulator Screenshot - iPhone Air - 2025-11-16 at 23.38.30.png" alt="Fun with Crosswords screenshot 1" style="width:50%;margin:0 auto;display:block;" onclick="openLightbox('crosswords', 0)">
           </div>
           <div class="item">
-            <img src="img/portfolio/fun-with-crosswords/Simulator Screenshot - iPhone Air - 2025-11-16 at 23.38.35.png" alt="Fun with Crosswords screenshot 2" style="width:50%;margin:0 auto;display:block;">
+            <img src="img/portfolio/fun-with-crosswords/Simulator Screenshot - iPhone Air - 2025-11-16 at 23.38.35.png" alt="Fun with Crosswords screenshot 2" style="width:50%;margin:0 auto;display:block;" onclick="openLightbox('crosswords', 1)">
           </div>
           <div class="item">
-            <img src="img/portfolio/fun-with-crosswords/Simulator Screenshot - iPhone Air - 2025-11-16 at 23.38.41.png" alt="Fun with Crosswords screenshot 3" style="width:50%;margin:0 auto;display:block;">
+            <img src="img/portfolio/fun-with-crosswords/Simulator Screenshot - iPhone Air - 2025-11-16 at 23.38.41.png" alt="Fun with Crosswords screenshot 3" style="width:50%;margin:0 auto;display:block;" onclick="openLightbox('crosswords', 2)">
           </div>
           <div class="item">
             <img src="img/portfolio/fun-with-crosswords/Simulator Screenshot - iPhone Air - 2025-11-16 at 23.38.47.png" alt="Fun with Crosswords screenshot 4" style="width:50%;margin:0 auto;display:block;">
@@ -250,17 +607,190 @@ title: Apps
         <a class="right carousel-control" href="#carouselCrosswords" data-slide="next">
           <span class="glyphicon glyphicon-chevron-right"></span>
         </a>
-      </div>
-      <p style="margin-top:15px;">Challenge your mind with engaging crossword puzzles for all skill levels.</p>
-      <ul class="text-left" style="display:inline-block;">
-        <li>Multiple difficulty levels</li>
-        <li>Daily puzzle challenges</li>
-        <li>Progress tracking</li>
-        <li>Hints and clue assistance</li>
-      </ul>
-      <div style="margin:10px 0;">
-        <a href="https://apps.apple.com/us/app/fun-with-crosswords/id1393761969" class="btn btn-default"><i class="fa fa-apple"></i> App Store</a>
+          </div>
+        </div>
+        <div class="app-features">
+          <h3>Key Features</h3>
+          <ul>
+            <li>Multiple difficulty levels</li>
+            <li>Daily puzzle challenges</li>
+            <li>Progress tracking</li>
+            <li>Hints and clue assistance</li>
+          </ul>
+        </div>
+        <div class="app-actions text-center">
+          <a href="https://apps.apple.com/us/app/fun-with-crosswords/id1393761969" class="btn-app-store"><i class="fa fa-apple"></i> App Store</a>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
+<!-- Lightbox for Memory by Seasons -->
+<div id="lightbox-memory" class="lightbox">
+  <span class="lightbox-close" onclick="closeLightbox('memory')">&times;</span>
+  <div class="lightbox-content">
+    <span class="lightbox-nav lightbox-prev" onclick="changeImage('memory', -1)">&#10094;</span>
+    <img id="lightbox-img-memory" src="" alt="Screenshot">
+    <span class="lightbox-nav lightbox-next" onclick="changeImage('memory', 1)">&#10095;</span>
+  </div>
+  <div class="lightbox-counter">
+    <span id="lightbox-counter-memory"></span>
+  </div>
+</div>
+
+<!-- Lightbox for Closet Flow -->
+<div id="lightbox-closet" class="lightbox">
+  <span class="lightbox-close" onclick="closeLightbox('closet')">&times;</span>
+  <div class="lightbox-content">
+    <span class="lightbox-nav lightbox-prev" onclick="changeImage('closet', -1)">&#10094;</span>
+    <img id="lightbox-img-closet" src="" alt="Screenshot">
+    <span class="lightbox-nav lightbox-next" onclick="changeImage('closet', 1)">&#10095;</span>
+  </div>
+  <div class="lightbox-counter">
+    <span id="lightbox-counter-closet"></span>
+  </div>
+</div>
+
+<!-- Lightbox for Fun with Crosswords -->
+<div id="lightbox-crosswords" class="lightbox">
+  <span class="lightbox-close" onclick="closeLightbox('crosswords')">&times;</span>
+  <div class="lightbox-content">
+    <span class="lightbox-nav lightbox-prev" onclick="changeImage('crosswords', -1)">&#10094;</span>
+    <img id="lightbox-img-crosswords" src="" alt="Screenshot">
+    <span class="lightbox-nav lightbox-next" onclick="changeImage('crosswords', 1)">&#10095;</span>
+  </div>
+  <div class="lightbox-counter">
+    <span id="lightbox-counter-crosswords"></span>
+  </div>
+</div>
+
+<script>
+  // Lightbox image arrays
+  const images = {
+    memory: [
+      'img/portfolio/memory-by-seasons/Simulator Screenshot - iPhone 16 Plus - 2025-10-11 at 20.32.31.png',
+      'img/portfolio/memory-by-seasons/Simulator Screenshot - iPhone 16 Plus - 2025-10-11 at 20.32.40.png',
+      'img/portfolio/memory-by-seasons/Simulator Screenshot - iPhone 16 Plus - 2025-10-11 at 20.32.54.png',
+      'img/portfolio/memory-by-seasons/Simulator Screenshot - iPhone 16 Plus - 2025-10-11 at 20.34.09.png',
+      'img/portfolio/memory-by-seasons/Simulator Screenshot - iPhone 16 Plus - 2025-10-11 at 20.34.17.png',
+      'img/portfolio/memory-by-seasons/Simulator Screenshot - iPhone 16 Plus - 2025-10-11 at 20.34.23.png',
+      'img/portfolio/memory-by-seasons/Simulator Screenshot - iPhone 16 Plus - 2025-10-11 at 20.47.25.png',
+      'img/portfolio/memory-by-seasons/Simulator Screenshot - iPhone 16 Plus - 2025-10-11 at 20.47.51.png',
+      'img/portfolio/memory-by-seasons/Simulator Screenshot - iPhone 16 Plus - 2025-10-11 at 20.48.03.png',
+      'img/portfolio/memory-by-seasons/Simulator Screenshot - iPhone 16 Plus - 2025-10-11 at 20.48.08.png',
+      'img/portfolio/memory-by-seasons/Simulator Screenshot - iPhone 16 Plus - 2025-10-11 at 20.48.11.png',
+      'img/portfolio/memory-by-seasons/Simulator Screenshot - iPhone 16 Plus - 2025-10-11 at 22.25.29.png',
+      'img/portfolio/memory-by-seasons/Simulator Screenshot - iPhone 16 Plus - 2025-10-11 at 22.25.32.png',
+      'img/portfolio/memory-by-seasons/Simulator Screenshot - iPhone 16 Plus - 2025-10-11 at 22.25.35.png',
+      'img/portfolio/memory-by-seasons/Simulator Screenshot - iPhone 16 Plus - 2025-10-11 at 22.25.39.png',
+      'img/portfolio/memory-by-seasons/Simulator Screenshot - iPhone 16 Plus - 2025-10-11 at 22.25.48.png',
+      'img/portfolio/memory-by-seasons/Simulator Screenshot - iPhone 16 Plus - 2025-10-11 at 22.25.59.png',
+      'img/portfolio/memory-by-seasons/Simulator Screenshot - iPhone 16 Plus - 2025-10-11 at 22.26.09.png',
+      'img/portfolio/memory-by-seasons/Simulator Screenshot - iPhone 16 Plus - 2025-10-11 at 22.29.08.png',
+      'img/portfolio/memory-by-seasons/Simulator Screenshot - iPhone 16 Plus - 2025-10-11 at 22.29.20.png'
+    ],
+    closet: [
+      'img/portfolio/closet-flow/accessories_category.png',
+      'img/portfolio/closet-flow/article_details.png',
+      'img/portfolio/closet-flow/articles_by_brand.png',
+      'img/portfolio/closet-flow/articles_loading.png',
+      'img/portfolio/closet-flow/closet_brands.png',
+      'img/portfolio/closet-flow/clothing.png',
+      'img/portfolio/closet-flow/dashboard.png',
+      'img/portfolio/closet-flow/dashboard_loading.png',
+      'img/portfolio/closet-flow/login.png',
+      'img/portfolio/closet-flow/no_articles_by_brand.png',
+      'img/portfolio/closet-flow/pants_articles.png',
+      'img/portfolio/closet-flow/profile.png',
+      'img/portfolio/closet-flow/register.png',
+      'img/portfolio/closet-flow/search_articles.png',
+      'img/portfolio/closet-flow/search_brands.png',
+      'img/portfolio/closet-flow/search_categories.png'
+    ],
+    crosswords: [
+      'img/portfolio/fun-with-crosswords/Simulator Screenshot - iPhone Air - 2025-11-16 at 23.38.30.png',
+      'img/portfolio/fun-with-crosswords/Simulator Screenshot - iPhone Air - 2025-11-16 at 23.38.35.png',
+      'img/portfolio/fun-with-crosswords/Simulator Screenshot - iPhone Air - 2025-11-16 at 23.38.41.png',
+      'img/portfolio/fun-with-crosswords/Simulator Screenshot - iPhone Air - 2025-11-16 at 23.38.47.png',
+      'img/portfolio/fun-with-crosswords/Simulator Screenshot - iPhone Air - 2025-11-16 at 23.38.52.png',
+      'img/portfolio/fun-with-crosswords/Simulator Screenshot - iPhone Air - 2025-11-16 at 23.39.03.png',
+      'img/portfolio/fun-with-crosswords/Simulator Screenshot - iPhone Air - 2025-11-16 at 23.39.10.png',
+      'img/portfolio/fun-with-crosswords/Simulator Screenshot - iPhone Air - 2025-11-16 at 23.39.15.png',
+      'img/portfolio/fun-with-crosswords/Simulator Screenshot - iPhone Air - 2025-11-16 at 23.39.20.png'
+    ]
+  };
+
+  let currentIndex = {
+    memory: 0,
+    closet: 0,
+    crosswords: 0
+  };
+
+  function openLightbox(app, index) {
+    currentIndex[app] = index;
+    const lightbox = document.getElementById('lightbox-' + app);
+    const img = document.getElementById('lightbox-img-' + app);
+    const counter = document.getElementById('lightbox-counter-' + app);
+
+    img.src = images[app][index];
+    counter.textContent = (index + 1) + ' / ' + images[app].length;
+    lightbox.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox(app) {
+    const lightbox = document.getElementById('lightbox-' + app);
+    lightbox.style.display = 'none';
+    document.body.style.overflow = 'auto';
+  }
+
+  function changeImage(app, direction) {
+    currentIndex[app] += direction;
+
+    if (currentIndex[app] >= images[app].length) {
+      currentIndex[app] = 0;
+    } else if (currentIndex[app] < 0) {
+      currentIndex[app] = images[app].length - 1;
+    }
+
+    const img = document.getElementById('lightbox-img-' + app);
+    const counter = document.getElementById('lightbox-counter-' + app);
+
+    img.src = images[app][currentIndex[app]];
+    counter.textContent = (currentIndex[app] + 1) + ' / ' + images[app].length;
+  }
+
+  // Keyboard navigation
+  document.addEventListener('keydown', function(e) {
+    const memoryLightbox = document.getElementById('lightbox-memory');
+    const closetLightbox = document.getElementById('lightbox-closet');
+    const crosswordsLightbox = document.getElementById('lightbox-crosswords');
+
+    let activeApp = null;
+    if (memoryLightbox.style.display === 'block') activeApp = 'memory';
+    else if (closetLightbox.style.display === 'block') activeApp = 'closet';
+    else if (crosswordsLightbox.style.display === 'block') activeApp = 'crosswords';
+
+    if (activeApp) {
+      if (e.key === 'ArrowLeft') {
+        changeImage(activeApp, -1);
+      } else if (e.key === 'ArrowRight') {
+        changeImage(activeApp, 1);
+      } else if (e.key === 'Escape') {
+        closeLightbox(activeApp);
+      }
+    }
+  });
+
+  // Close lightbox when clicking outside the image
+  document.querySelectorAll('.lightbox').forEach(lightbox => {
+    lightbox.addEventListener('click', function(e) {
+      if (e.target === this) {
+        const app = this.id.replace('lightbox-', '');
+        closeLightbox(app);
+      }
+    });
+  });
+</script>
+
