@@ -92,28 +92,29 @@ description: Learn how MellowMint mobile apps handle personal information and pr
 <section class="privacy-card" aria-labelledby="policy-title">
   <h2 id="policy-title" class="sr-only">Mellowmint Privacy Policy</h2>
 
-  <p>This policy describes how Closet Flow handles information. Closet Flow works offline, and signed-in accounts can sync data across devices.</p>
+  <p>This policy describes how Closet Flow handles information. The app works offline, and signed-in accounts can sync data across devices. It does not describe other MellowMint apps.</p>
 
   <h3>1. Information Closet Flow Handles</h3>
   <ul>
-    <li><strong>Account information:</strong> Email or Google sign-in is used to authenticate your account.</li>
-    <li><strong>Closet and outfit data:</strong> Clothing details, brands, categories, saved outfits, and related photos are stored on your device. When you sign in, this data and outfit changes sync to the cloud.</li>
-    <li><strong>Location and weather:</strong> If you grant location permission while using the app, Closet Flow uses your location to request current weather for outfit suggestions. Weather results are cached on your device for offline use.</li>
-    <li><strong>Product links:</strong> If you import an item from a supported retailer link, the app uses that link to retrieve product details.</li>
-    <li><strong>Optional AI tagging:</strong> Pro AI occasion tagging is available only when the feature is configured. It processes a tagging request through a cloud function.</li>
+    <li><strong>Account and profile information:</strong> Email and Google sign-in authenticate your account. The app can store profile details such as your name, gender, and profile photo.</li>
+    <li><strong>Closet and outfit information:</strong> Clothing details, brands, categories, photos, saved outfits, and related profile data are stored locally and, for signed-in accounts, synced to cloud services.</li>
+    <li><strong>Location and weather:</strong> When you grant location permission, the app sends your coordinates to request current weather. You can also search for weather by a city or location name. Weather results are cached on your device.</li>
+    <li><strong>Brand and product lookups:</strong> Brand searches use Brandfetch. Product lookups for supported Amazon, H&amp;M, and ASOS links use APIs provided through RapidAPI. These requests may include the search text, brand identifier, or product identifier needed to return results.</li>
+    <li><strong>Optional AI occasion tagging:</strong> If the Pro feature is enabled and configured, the app may send an item's name, description, category, and optionally its image to an AI-tagging function. The AI provider depends on the server-side function configuration and is not identified in the app source available for this policy.</li>
   </ul>
 
   <h3>2. Storage and Service Providers</h3>
-  <p>Closet Flow stores app data locally so core features can work offline. For signed-in users, account and app data sync through Supabase services, including authentication, database, storage, and real-time updates. Weather requests and optional AI tagging are handled by cloud functions. These services process information to provide the features described above.</p>
+  <p>Closet Flow uses Supabase for account authentication, cloud database and file storage, real-time synchronization, and server-side functions. Weather requests are sent through a Supabase function to WeatherAPI. Brand and product lookup requests are sent to Brandfetch or RapidAPI and the relevant product API. These providers process information to return the requested app features, subject to their own privacy and retention practices.</p>
 
   <h3>3. Location Permission</h3>
-  <p>Location access is used only while the app is in use to obtain weather for outfit suggestions. You can change or revoke location permission in your device settings; weather-based suggestions may then be unavailable.</p>
+  <p>Location is requested only while the app is in use for weather-based suggestions. The app sends coordinates to its weather service; it does not need location permission for the rest of the app. You can change or revoke this permission in your device settings, after which location-based weather may be unavailable.</p>
 
-  <h3>4. Account and Data Deletion</h3>
-  <p>Closet Flow provides an in-app account deletion option. Use it from within the app to delete your account. App data saved only on a device can also be removed by deleting it in the app or removing the app from that device.</p>
+  <h3>4. Retention and Account Deletion</h3>
+  <p>Closet Flow keeps local data on your device for offline use and syncs account data to cloud services when you sign in. The app includes an account deletion flow that sends a request to a configured server-side function. The server-side deletion function was not available for review, so the exact scope and timing of deletion, including backups and copies held by service providers, could not be verified. Contact us at the email below for help with an account deletion request.</p>
+  <p>For weather rate limiting, the current backend source records the account ID and time of each request. It removes older entries when that account makes a later weather request; no scheduled cleanup or fixed maximum retention period for inactive accounts was found in the source reviewed. The deployed backend may differ.</p>
 
   <h3>5. Other MellowMint Apps</h3>
-  <p>Memory by Seasons and Fun with Crosswords may handle information differently. This policy does not describe their app-specific data practices; refer to the privacy disclosures provided with each app.</p>
+  <p>Memory by Seasons and Fun with Crosswords may handle information differently. Refer to the privacy disclosures provided with those apps for their data practices.</p>
 
   <h3>6. Changes to This Policy</h3>
   <p>We may update this Privacy Policy as our apps and services change. Updates will be posted here and reflected in the relevant app store listings.</p>
