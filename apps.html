@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Explore MellowMint&#39;s mobile apps, including Memory by Seasons, Closet Flow, and Fun with Crosswords.">
+    <meta name="author" content="">
+
+    <title>Apps | MellowMint Apps</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+
+    <!-- Custom Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="css/animate.min.css" type="text/css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+
+<body id="page-top">
+  <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand page-scroll" href="/">Mellowmint</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/apps.html">Apps</a>
+                </li>
+                <li>
+                    <a href="/privacy.html">Privacy Policy</a>
+                </li>
+                <li>
+                    <a href="/contact.html">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+  <header>
+    <div class="header-content">
+        <div class="header-content-inner text-center">
+<!--            <img src="img/header.jpg" alt="Mellowmint Logo" class="header-logo">-->
+            <h1>Apps that soothe, organize, and spark joy.</h1>
+            <hr>
+            <div style="margin: 20px 0;">
+                <a href="/#portfolio" class="btn btn-primary btn-xl">Featured Apps</a>
+            </div>
+            <div>
+                <a href="https://apps.apple.com/us/developer/subrina-a-thompson/id1393761968" class="btn btn-default" style="margin-right:10px;">
+                    <i class="fa fa-apple"></i> App Store
+                </a>
+                <span class="btn btn-default" aria-disabled="true">
+                    <i class="fa fa-android"></i> Google Play — Coming Soon
+                </span>
+            </div>
+        </div>
+    </div>
+</header>
+
+  
+    <main>
+      <style>
+  .apps-hero {
+    background: linear-gradient(135deg, #F05F40 0%, #e8491d 100%);
+    padding: 80px 0 60px;
+    color: white;
+    margin-bottom: 60px;
+  }
+
+  .apps-hero h1 {
+    font-size: 3em;
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-family: 'Fredoka', sans-serif;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  }
+
+  .apps-hero p {
+    font-size: 1.3em;
+    opacity: 1;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+  }
+
+  /* App Icon Styles */
+  .app-icon {
+    width: 100px;
+    height: 100px;
+    border-radius: 22px;
+    margin: 0 auto 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    background: linear-gradient(135deg, #F05F40 0%, #e8491d 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3em;
+  }
+
+  /* Lightbox Styles */
+  .lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.95);
+    overflow: auto;
+  }
+
+  .lightbox-content {
+    position: relative;
+    margin: 2% auto;
+    width: auto;
+    max-width: 90%;
+    max-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .lightbox-content img {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  }
+
+  .lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10000;
+    transition: all 0.3s ease;
+  }
+
+  .lightbox-close:hover {
+    color: #F05F40;
+    transform: scale(1.2);
+  }
+
+  .lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 50px;
+    cursor: pointer;
+    padding: 20px;
+    user-select: none;
+    transition: all 0.3s ease;
+  }
+
+  .lightbox-nav:hover {
+    color: #F05F40;
+    transform: translateY(-50%) scale(1.2);
+  }
+
+  .lightbox-prev {
+    left: 20px;
+  }
+
+  .lightbox-next {
+    right: 20px;
+  }
+
+  .lightbox-counter {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    background: rgba(0,0,0,0.5);
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 1em;
+  }
+
+  /* Click to expand hint */
+  .carousel-inner img {
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+  }
+
+  .carousel-inner img:hover {
+    opacity: 0.9;
+  }
+
+  .expand-hint {
+    text-align: center;
+    font-size: 0.85em;
+    color: #718096;
+    margin-top: 10px;
+    font-style: italic;
+  }
+
+  .expand-hint i {
+    margin-right: 5px;
+  }
+
+  .app-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    margin-bottom: 50px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .app-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+  }
+
+  .app-header {
+    padding: 30px 30px 20px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  }
+
+  .app-header h2 {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 2em;
+    margin: 0 0 10px;
+    color: #2d3748;
+  }
+
+  .app-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    background: rgba(240, 95, 64, 0.1);
+    color: #F05F40;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+
+  .app-description {
+    font-size: 1.1em;
+    color: #4a5568;
+    margin: 15px 0;
+  }
+
+  .carousel-container {
+    padding: 20px;
+    background: #f8f9fa;
+  }
+
+  .carousel-inner img {
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  }
+
+  .app-features {
+    padding: 25px 40px;
+  }
+
+  .app-features h3 {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    color: #2d3748;
+  }
+
+  .app-features ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 25px;
+  }
+
+  .app-features li {
+    padding: 10px 0;
+    font-size: 1.05em;
+    color: #4a5568;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .app-features li:last-child {
+    border-bottom: none;
+  }
+
+  .app-features li:before {
+    content: "✓";
+    color: #48bb78;
+    font-weight: bold;
+    margin-right: 12px;
+    font-size: 1.2em;
+  }
+
+  .app-actions {
+    padding: 0 40px 35px;
+  }
+
+  .btn-app-store {
+    background: linear-gradient(135deg, #F05F40 0%, #e8491d 100%);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 1.05em;
+    border: none;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+  .btn-app-store:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(240, 95, 64, 0.4);
+    color: white;
+  }
+
+  .store-coming-soon,
+  .store-coming-soon:hover {
+    background: #718096;
+    box-shadow: none;
+    color: white;
+    cursor: default;
+    transform: none;
+  }
+
+  .btn-google-play {
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 1.05em;
+    border: none;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .btn-google-play:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(56, 239, 125, 0.4);
+    color: white;
+  }
+
+  .carousel-control {
+    background: none;
+    width: 40px;
+    height: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.7;
+  }
+
+  .carousel-control:hover {
+    opacity: 1;
+  }
+
+  .carousel-indicators li {
+    background-color: #cbd5e0;
+    border: none;
+  }
+
+  .carousel-indicators .active {
+    background: linear-gradient(135deg, #F05F40 0%, #e8491d 100%);
+  }
+
+  @media (max-width: 768px) {
+    .apps-hero h1 {
+      font-size: 2em;
+    }
+
+    .app-header h2 {
+      font-size: 1.5em;
+    }
+
+    .app-features,
+    .app-actions {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+</style>
+
+<div class="apps-hero">
+  <div class="container text-center">
+    <h1>Our Apps</h1>
+    <p>Discover our collection of innovative mobile applications</p>
+  </div>
+</div>
+
+<section class="container" style="padding-bottom: 80px;">
+  <div class="row">
+    <!-- Memory by Seasons -->
+    <div class="col-lg-6" id="memory-by-seasons" data-aos="fade-up" data-aos-duration="800">
+      <div class="app-card">
+        <div class="app-header text-center">
+          <div class="app-icon">🎮</div>
+          <span class="app-badge">Memory Game</span>
+          <h2>Memory by Seasons</h2>
+          <p class="app-description">A memory board game where you flip tiles to match the correct ones, season by season.</p>
+        </div>
+        <div class="carousel-container">
+          <p class="expand-hint"><i class="fa fa-search-plus"></i> Click any image to view full size</p>
+          <div id="carouselMemory" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselMemory" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselMemory" data-slide-to="1"></li>
+          <li data-target="#carouselMemory" data-slide-to="2"></li>
+          <li data-target="#carouselMemory" data-slide-to="3"></li>
+          <li data-target="#carouselMemory" data-slide-to="4"></li>
+          <li data-target="#carouselMemory" data-slide-to="5"></li>
+          <li data-target="#carouselMemory" data-slide-to="6"></li>
+          <li data-target="#carouselMemory" data-slide-to="7"></li>
+          <li data-target="#carouselMemory" data-slide-to="8"></li>
+          <li data-target="#carouselMemory" data-slide-to="9"></li>
+          <li data-target="#carouselMemory" data-slide-to="10"></li>
+          <li data-target="#carouselMemory" data-slide-to="11"></li>
+          <li data-target="#carouselMemory" data-slide-to="12"></li>
+          <li data-target="#carouselMemory" data-slide-to="13"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="item active">
+            <img src="img/portfolio/memory-by-seasons/Simulator Screenshot - iPhone 17 Pro Max - 2026-01-11 at 10.40.49.png" alt="Memory by Seasons screenshot 1" style="width:50%;margin:0 auto;display:block;">
+          </div>
+          <div class="item">
+            <img src="img/portfolio/memory-by-seasons/Simulator Screenshot - iPhone 17 Pro Max - 2026-01-11 at 10.40.58.png" alt="Memory by Seasons screenshot 2" style="width:50%;margin:0 auto;display:block;">
+          </div>
+          <div class="item">
+            <img src="img/portfolio/memory-by-seasons/Simulator Screenshot - iPhone 17 Pro Max - 2026-01-11 at 10.41.07.png" alt="Memory by Seasons screenshot 3" style="width:50%;margin:0 auto;display:block;">
+          </div>
+          <div class="item">
+            <img src="img/portfolio/memory-by-seasons/Simulator Screenshot - iPhone 17 Pro Max - 2026-01-11 at 10.41.19.png" alt="Memory by Seasons screenshot 4" style="width:50%;margin:0 auto;display:block;">
+          </div>
+          <div class="item">
+            <img src="img/portfolio/memory-by-seasons/Simulator Screenshot - iPhone 17 Pro Max - 2026-01-11 at 10.43.52.png" alt="Memory by Seasons screenshot 5" style="width:50%;margin:0 auto;display:block;">
+          </div>
+          <div class="item">
+            <img src="img/portfolio/memory-by-seasons/Simulator Screenshot - iPhone 17 Pro Max - 2026-01-11 at 10.45.33.png" alt="Memory by Seasons screenshot 6" style="width:50%;margin:0 auto;display:block;">
+          </div>
+          <div class="item">
+            <img src="img/portfolio/memory-by-seasons/Simulator Screenshot - iPhone 17 Pro Max - 2026-01-11 at 10.45.48.png" alt="Memory by Seasons screenshot 7" style="width:50%;margin:0 auto;display:block;">
+          </div>
+          <div class="item">
+            <img src="img/portfolio/memory-by-seasons/Simulator Screenshot - iPhone 17 Pro Max - 2026-01-11 at 10.51.53.png" alt="Memory by Seasons screenshot 8" style="width:50%;margin:0 auto;display:block;">
+          </div>
+          <div class="item">
+            <img src="img/portfolio/memory-by-seasons/Simulator Screenshot - iPhone 17 Pro Max - 2026-01-11 at 11.08.41.png" alt="Memory by Seasons screenshot 9" style="width:50%;margin:0 auto;display:block;">
+          </div>
+          <div class="item">
+            <img src="img/portfolio/memory-by-seasons/Simulator Screenshot - iPhone 17 Pro Max - 2026-01-11 at 11.08.57.png" alt="Memory by Seasons screenshot 10" style="width:50%;margin:0 auto;display:block;">
+          </div>
+          <div class="item">
+            <img src="img/portfolio/memory-by-seasons/Simulator Screenshot - iPhone 17 Pro Max - 2026-01-11 at 11.14.50.png" alt="Memory by Seasons screenshot 11" style="width:50%;margin:0 auto;display:block;">
+          </div>
+          <div class="item">
+            <img src="img/portfolio/memory-by-seasons/Simulator Screenshot - iPhone 17 Pro Max - 2026-01-11 at 11.14.53.png" alt="Memory by Seasons screenshot 12" style="width:50%;margin:0 auto;display:block;">
+          </div>
+          <div class="item">
+            <img src="img/portfolio/memory-by-seasons/Simulator Screenshot - iPhone 17 Pro Max - 2026-01-11 at 11.15.00.png" alt="Memory by Seasons screenshot 13" style="width:50%;margin:0 auto;display:block;">
+          </div>
+          <div class="item">
+            <img src="img/portfolio/memory-by-seasons/Simulator Screenshot - iPhone 17 Pro Max - 2026-01-11 at 11.17.34.png" alt="Memory by Seasons screenshot 14" style="width:50%;margin:0 auto;display:block;">
+          </div>
+        </div>
+        <a class="left carousel-control" href="#carouselMemory" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="right carousel-control" href="#carouselMemory" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+          </div>
+        </div>
+        <div class="app-features">
+          <h3>Key Features</h3>
+          <ul>
+            <li>Easy seasonal tile matching</li>
+            <li>Seasonal themes and scoring</li>
+            <li>Score tracking</li>
+            <li>Beautiful seasonal graphics</li>
+          </ul>
+        </div>
+        <div class="app-actions text-center">
+          <a href="https://apps.apple.com/us/app/memory-by-seasons/id6753765713" class="btn-app-store"><i class="fa fa-apple"></i> App Store</a>
+          <span class="btn-google-play store-coming-soon" aria-disabled="true"><i class="fa fa-android"></i> Google Play — Coming Soon</span>
+        </div>
+      </div>
+    </div>
+    <!-- Closet Flow -->
+    <div class="col-lg-6" id="closet-flow" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+      <div class="app-card">
+        <div class="app-header text-center">
+          <div class="app-icon">👗</div>
+          <span class="app-badge">Wardrobe Organizer</span>
+          <h2>Closet Flow</h2>
+          <p class="app-description">Organize your wardrobe, plan outfits, and simplify your mornings with Closet Flow.</p>
+        </div>
+        <div class="carousel-container">
+          <p class="expand-hint"><i class="fa fa-search-plus"></i> Click any image to view full size</p>
+          <div id="carouselCloset" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselCloset" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselCloset" data-slide-to="1"></li>
+          <li data-target="#carouselCloset" data-slide-to="2"></li>
+          <li data-target="#carouselCloset" data-slide-to="3"></li>
+          <li data-target="#carouselCloset" data-slide-to="4"></li>
+          <li data-target="#carouselCloset" data-slide-to="5"></li>
+          <li data-target="#carouselCloset" data-slide-to="6"></li>
+          <li data-target="#carouselCloset" data-slide-to="7"></li>
+          <li data-target="#carouselCloset" data-slide-to="8"></li>
+          <li data-target="#carouselCloset" data-slide-to="9"></li>
+          <li data-target="#carouselCloset" data-slide-to="10"></li>
+          <li data-target="#carouselCloset" data-slide-to="11"></li>
+          <li data-target="#carouselCloset" data-slide-to="12"></li>
+          <li data-target="#carouselCloset" data-slide-to="13"></li>
+          <li data-target="#carouselCloset" data-slide-to="14"></li>
+          <li data-target="#carouselCloset" data-slide-to="15"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="item active">
+            <img src="img/portfolio/closet-flow/accessories_category.png" alt="Closet Flow screenshot 1" style="width:50%;margin:0 auto;display:block;">
+          </div>
+          <div class="item">
+            <img src="img/portfolio/closet-flow/article_details.png" alt="Closet Flow screenshot 2" style="width:50%;margin:0 auto;display:block;">
+          </div>
+          <div class="item">
+            <img src="img/portfolio/closet-flow/articles_by_brand.png" alt="Closet Flow screenshot 3" style="width:50%;margin:0 auto;display:block;">
+          </div>
+          <div class="item">
+            <img src="img/portfolio/closet-flow/articles_loading.png" alt="Closet Flow screenshot 4" style="width:50%;margin:0 auto;display:block;">
+          </div>
+          <div class="item">
+            <img src="img/portfolio/closet-flow/closet_brands.png" alt="Closet Flow screenshot 5" style="width:50%;margin:0 auto;display:block;">
+          </div>
+          <div class="item">
+            <img src="img/portfolio/closet-flow/clothing.png" alt="Closet Flow screenshot 6" style="width:50%;margin:0 auto;display:block;">
+          </div>
+          <div class="item">
+            <img src="img/portfolio/closet-flow/dashboard.png" alt="Closet Flow screenshot 7" style="width:50%;margin:0 auto;display:block;">
+          </div>
+          <div class="item">
+            <img src="img/portfolio/closet-flow/dashboard_loading.png" alt="Closet Flow screenshot 8" style="width:50%;margin:0 auto;display:block;">
+          </div>
+          <div class="item">
+            <img src="img/portfolio/closet-flow/login.png" alt="Closet Flow screenshot 9" style="width:50%;margin:0 auto;display:block;">
+          </div>
+          <div class="item">
+            <img src="img/portfolio/closet-flow/no_articles_by_brand.png" alt="Closet Flow screenshot 10" style="width:50%;margin:0 auto;display:block;">
+          </div>
+          <div class="item">
+            <img src="img/portfolio/closet-flow/pants_articles.png" alt="Closet Flow screenshot 11" style="width:50%;margin:0 auto;display:block;">
+          </div>
+          <div class="item">
+            <img src="img/portfolio/closet-flow/profile.png" alt="Closet Flow screenshot 12" style="width:50%;margin:0 auto;display:block;">
+          </div>
+          <div class="item">
+            <img src="img/portfolio/closet-flow/register.png" alt="Closet Flow screenshot 13" style="width:50%;margin:0 auto;display:block;">
+          </div>
+          <div class="item">
+            <img src="img/portfolio/closet-flow/search_articles.png" alt="Closet Flow screenshot 14" style="width:50%;margin:0 auto;display:block;">
+          </div>
+          <div class="item">
+            <img src="img/portfolio/closet-flow/search_brands.png" alt="Closet Flow screenshot 15" style="width:50%;margin:0 auto;display:block;">
+          </div>
+          <div class="item">
+            <img src="img/portfolio/closet-flow/search_categories.png" alt="Closet Flow screenshot 16" style="width:50%;margin:0 auto;display:block;">
+          </div>
+        </div>
+        <a class="left carousel-control" href="#carouselCloset" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="right carousel-control" href="#carouselCloset" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+          </div>
+        </div>
+        <div class="app-features">
+          <h3>Key Features</h3>
+          <ul>
+            <li>Wardrobe cataloging (free up to 50 items; Pro unlimited)</li>
+            <li>Rule-based outfit suggestions</li>
+            <li>Weather-aware outfit picks</li>
+            <li>Brand management</li>
+          </ul>
+          <p class="app-pricing">Free to start. Closet Flow Pro is $4.99/month or $29.99/year for an unlimited closet and AI occasion tagging.</p>
+        </div>
+        <div class="app-actions text-center">
+          <span class="btn-app-store store-coming-soon" aria-disabled="true"><i class="fa fa-apple"></i> App Store — Coming Soon</span>
+          <span class="btn-google-play store-coming-soon" aria-disabled="true"><i class="fa fa-android"></i> Google Play — Coming Soon</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <!-- Fun with Crosswords -->
+    <div class="col-lg-6" id="fun-with-crosswords" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+      <div class="app-card">
+        <div class="app-header text-center">
+          <div class="app-icon">🧩</div>
+          <span class="app-badge">Puzzle Game</span>
+          <h2>Fun with Crosswords</h2>
+          <p class="app-description">Challenge your mind with engaging crossword puzzles for all skill levels.</p>
+        </div>
+        <div class="carousel-container">
+          <p class="expand-hint"><i class="fa fa-search-plus"></i> Click any image to view full size</p>
+          <div id="carouselCrosswords" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselCrosswords" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselCrosswords" data-slide-to="1"></li>
+          <li data-target="#carouselCrosswords" data-slide-to="2"></li>
+          <li data-target="#carouselCrosswords" data-slide-to="3"></li>
+          <li data-target="#carouselCrosswords" data-slide-to="4"></li>
+          <li data-target="#carouselCrosswords" data-slide-to="5"></li>
+          <li data-target="#carouselCrosswords" data-slide-to="6"></li>
+          <li data-target="#carouselCrosswords" data-slide-to="7"></li>
+          <li data-target="#carouselCrosswords" data-slide-to="8"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="item active">
+            <img src="img/portfolio/fun-with-crosswords/Simulator Screenshot - iPhone Air - 2025-11-16 at 23.38.30.png" alt="Fun with Crosswords screenshot 1" style="width:50%;margin:0 auto;display:block;">
+          </div>
+          <div class="item">
+            <img src="img/portfolio/fun-with-crosswords/Simulator Screenshot - iPhone Air - 2025-11-16 at 23.38.35.png" alt="Fun with Crosswords screenshot 2" style="width:50%;margin:0 auto;display:block;">
+          </div>
+          <div class="item">
+            <img src="img/portfolio/fun-with-crosswords/Simulator Screenshot - iPhone Air - 2025-11-16 at 23.38.41.png" alt="Fun with Crosswords screenshot 3" style="width:50%;margin:0 auto;display:block;">
+          </div>
+          <div class="item">
+            <img src="img/portfolio/fun-with-crosswords/Simulator Screenshot - iPhone Air - 2025-11-16 at 23.38.47.png" alt="Fun with Crosswords screenshot 4" style="width:50%;margin:0 auto;display:block;">
+          </div>
+          <div class="item">
+            <img src="img/portfolio/fun-with-crosswords/Simulator Screenshot - iPhone Air - 2025-11-16 at 23.38.52.png" alt="Fun with Crosswords screenshot 5" style="width:50%;margin:0 auto;display:block;">
+          </div>
+          <div class="item">
+            <img src="img/portfolio/fun-with-crosswords/Simulator Screenshot - iPhone Air - 2025-11-16 at 23.39.03.png" alt="Fun with Crosswords screenshot 6" style="width:50%;margin:0 auto;display:block;">
+          </div>
+          <div class="item">
+            <img src="img/portfolio/fun-with-crosswords/Simulator Screenshot - iPhone Air - 2025-11-16 at 23.39.10.png" alt="Fun with Crosswords screenshot 7" style="width:50%;margin:0 auto;display:block;">
+          </div>
+          <div class="item">
+            <img src="img/portfolio/fun-with-crosswords/Simulator Screenshot - iPhone Air - 2025-11-16 at 23.39.15.png" alt="Fun with Crosswords screenshot 8" style="width:50%;margin:0 auto;display:block;">
+          </div>
+          <div class="item">
+            <img src="img/portfolio/fun-with-crosswords/Simulator Screenshot - iPhone Air - 2025-11-16 at 23.39.20.png" alt="Fun with Crosswords screenshot 9" style="width:50%;margin:0 auto;display:block;">
+          </div>
+        </div>
+        <a class="left carousel-control" href="#carouselCrosswords" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="right carousel-control" href="#carouselCrosswords" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+          </div>
+        </div>
+        <div class="app-features">
+          <h3>Key Features</h3>
+          <ul>
+            <li>Multiple difficulty levels</li>
+            <li>Daily puzzle challenges</li>
+            <li>Progress tracking</li>
+            <li>Hints and clue assistance</li>
+          </ul>
+        </div>
+        <div class="app-actions text-center">
+          <a href="https://apps.apple.com/us/app/fun-with-crosswords/id1393761969" class="btn-app-store"><i class="fa fa-apple"></i> App Store</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox for Memory by Seasons -->
+<div id="lightbox-memory" class="lightbox">
+  <span class="lightbox-close" onclick="closeLightbox('memory')">&times;</span>
+  <div class="lightbox-content">
+    <span class="lightbox-nav lightbox-prev" onclick="changeImage('memory', -1)">&#10094;</span>
+    <img id="lightbox-img-memory" src="" alt="Screenshot">
+    <span class="lightbox-nav lightbox-next" onclick="changeImage('memory', 1)">&#10095;</span>
+  </div>
+  <div class="lightbox-counter">
+    <span id="lightbox-counter-memory"></span>
+  </div>
+</div>
+
+<!-- Lightbox for Closet Flow -->
+<div id="lightbox-closet" class="lightbox">
+  <span class="lightbox-close" onclick="closeLightbox('closet')">&times;</span>
+  <div class="lightbox-content">
+    <span class="lightbox-nav lightbox-prev" onclick="changeImage('closet', -1)">&#10094;</span>
+    <img id="lightbox-img-closet" src="" alt="Screenshot">
+    <span class="lightbox-nav lightbox-next" onclick="changeImage('closet', 1)">&#10095;</span>
+  </div>
+  <div class="lightbox-counter">
+    <span id="lightbox-counter-closet"></span>
+  </div>
+</div>
+
+<!-- Lightbox for Fun with Crosswords -->
+<div id="lightbox-crosswords" class="lightbox">
+  <span class="lightbox-close" onclick="closeLightbox('crosswords')">&times;</span>
+  <div class="lightbox-content">
+    <span class="lightbox-nav lightbox-prev" onclick="changeImage('crosswords', -1)">&#10094;</span>
+    <img id="lightbox-img-crosswords" src="" alt="Screenshot">
+    <span class="lightbox-nav lightbox-next" onclick="changeImage('crosswords', 1)">&#10095;</span>
+  </div>
+  <div class="lightbox-counter">
+    <span id="lightbox-counter-crosswords"></span>
+  </div>
+</div>
+
+<script>
+  // Lightbox image arrays
+  const images = {
+    memory: [
+      'img/portfolio/memory-by-seasons/Simulator Screenshot - iPhone 17 Pro Max - 2026-01-11 at 10.40.49.png',
+      'img/portfolio/memory-by-seasons/Simulator Screenshot - iPhone 17 Pro Max - 2026-01-11 at 10.40.58.png',
+      'img/portfolio/memory-by-seasons/Simulator Screenshot - iPhone 17 Pro Max - 2026-01-11 at 10.41.07.png',
+      'img/portfolio/memory-by-seasons/Simulator Screenshot - iPhone 17 Pro Max - 2026-01-11 at 10.41.19.png',
+      'img/portfolio/memory-by-seasons/Simulator Screenshot - iPhone 17 Pro Max - 2026-01-11 at 10.43.52.png',
+      'img/portfolio/memory-by-seasons/Simulator Screenshot - iPhone 17 Pro Max - 2026-01-11 at 10.45.33.png',
+      'img/portfolio/memory-by-seasons/Simulator Screenshot - iPhone 17 Pro Max - 2026-01-11 at 10.45.48.png',
+      'img/portfolio/memory-by-seasons/Simulator Screenshot - iPhone 17 Pro Max - 2026-01-11 at 10.51.53.png',
+      'img/portfolio/memory-by-seasons/Simulator Screenshot - iPhone 17 Pro Max - 2026-01-11 at 11.08.41.png',
+      'img/portfolio/memory-by-seasons/Simulator Screenshot - iPhone 17 Pro Max - 2026-01-11 at 11.08.57.png',
+      'img/portfolio/memory-by-seasons/Simulator Screenshot - iPhone 17 Pro Max - 2026-01-11 at 11.14.50.png',
+      'img/portfolio/memory-by-seasons/Simulator Screenshot - iPhone 17 Pro Max - 2026-01-11 at 11.14.53.png',
+      'img/portfolio/memory-by-seasons/Simulator Screenshot - iPhone 17 Pro Max - 2026-01-11 at 11.15.00.png',
+      'img/portfolio/memory-by-seasons/Simulator Screenshot - iPhone 17 Pro Max - 2026-01-11 at 11.17.34.png'
+    ],
+    closet: [
+      'img/portfolio/closet-flow/accessories_category.png',
+      'img/portfolio/closet-flow/article_details.png',
+      'img/portfolio/closet-flow/articles_by_brand.png',
+      'img/portfolio/closet-flow/articles_loading.png',
+      'img/portfolio/closet-flow/closet_brands.png',
+      'img/portfolio/closet-flow/clothing.png',
+      'img/portfolio/closet-flow/dashboard.png',
+      'img/portfolio/closet-flow/dashboard_loading.png',
+      'img/portfolio/closet-flow/login.png',
+      'img/portfolio/closet-flow/no_articles_by_brand.png',
+      'img/portfolio/closet-flow/pants_articles.png',
+      'img/portfolio/closet-flow/profile.png',
+      'img/portfolio/closet-flow/register.png',
+      'img/portfolio/closet-flow/search_articles.png',
+      'img/portfolio/closet-flow/search_brands.png',
+      'img/portfolio/closet-flow/search_categories.png'
+    ],
+    crosswords: [
+      'img/portfolio/fun-with-crosswords/Simulator Screenshot - iPhone Air - 2025-11-16 at 23.38.30.png',
+      'img/portfolio/fun-with-crosswords/Simulator Screenshot - iPhone Air - 2025-11-16 at 23.38.35.png',
+      'img/portfolio/fun-with-crosswords/Simulator Screenshot - iPhone Air - 2025-11-16 at 23.38.41.png',
+      'img/portfolio/fun-with-crosswords/Simulator Screenshot - iPhone Air - 2025-11-16 at 23.38.47.png',
+      'img/portfolio/fun-with-crosswords/Simulator Screenshot - iPhone Air - 2025-11-16 at 23.38.52.png',
+      'img/portfolio/fun-with-crosswords/Simulator Screenshot - iPhone Air - 2025-11-16 at 23.39.03.png',
+      'img/portfolio/fun-with-crosswords/Simulator Screenshot - iPhone Air - 2025-11-16 at 23.39.10.png',
+      'img/portfolio/fun-with-crosswords/Simulator Screenshot - iPhone Air - 2025-11-16 at 23.39.15.png',
+      'img/portfolio/fun-with-crosswords/Simulator Screenshot - iPhone Air - 2025-11-16 at 23.39.20.png'
+    ]
+  };
+
+  let currentIndex = {
+    memory: 0,
+    closet: 0,
+    crosswords: 0
+  };
+
+  Object.entries({
+    memory: 'carouselMemory',
+    closet: 'carouselCloset',
+    crosswords: 'carouselCrosswords'
+  }).forEach(([app, carouselId]) => {
+    document.querySelectorAll(`#${carouselId} .carousel-inner img`).forEach((image, index) => {
+      image.tabIndex = 0;
+      image.setAttribute('role', 'button');
+      image.setAttribute('aria-label', `${image.alt} - view full size`);
+      image.addEventListener('click', () => openLightbox(app, index));
+      image.addEventListener('keydown', event => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          openLightbox(app, index);
+        }
+      });
+    });
+  });
+
+  function openLightbox(app, index) {
+    currentIndex[app] = index;
+    const lightbox = document.getElementById('lightbox-' + app);
+    const img = document.getElementById('lightbox-img-' + app);
+    const counter = document.getElementById('lightbox-counter-' + app);
+
+    img.src = images[app][index];
+    counter.textContent = (index + 1) + ' / ' + images[app].length;
+    lightbox.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox(app) {
+    const lightbox = document.getElementById('lightbox-' + app);
+    lightbox.style.display = 'none';
+    document.body.style.overflow = 'auto';
+  }
+
+  function changeImage(app, direction) {
+    currentIndex[app] += direction;
+
+    if (currentIndex[app] >= images[app].length) {
+      currentIndex[app] = 0;
+    } else if (currentIndex[app] < 0) {
+      currentIndex[app] = images[app].length - 1;
+    }
+
+    const img = document.getElementById('lightbox-img-' + app);
+    const counter = document.getElementById('lightbox-counter-' + app);
+
+    img.src = images[app][currentIndex[app]];
+    counter.textContent = (currentIndex[app] + 1) + ' / ' + images[app].length;
+  }
+
+  // Keyboard navigation
+  document.addEventListener('keydown', function(e) {
+    const memoryLightbox = document.getElementById('lightbox-memory');
+    const closetLightbox = document.getElementById('lightbox-closet');
+    const crosswordsLightbox = document.getElementById('lightbox-crosswords');
+
+    let activeApp = null;
+    if (memoryLightbox.style.display === 'block') activeApp = 'memory';
+    else if (closetLightbox.style.display === 'block') activeApp = 'closet';
+    else if (crosswordsLightbox.style.display === 'block') activeApp = 'crosswords';
+
+    if (activeApp) {
+      if (e.key === 'ArrowLeft') {
+        changeImage(activeApp, -1);
+      } else if (e.key === 'ArrowRight') {
+        changeImage(activeApp, 1);
+      } else if (e.key === 'Escape') {
+        closeLightbox(activeApp);
+      }
+    }
+  });
+
+  // Close lightbox when clicking outside the image
+  document.querySelectorAll('.lightbox').forEach(lightbox => {
+    lightbox.addEventListener('click', function(e) {
+      if (e.target === this) {
+        const app = this.id.replace('lightbox-', '');
+        closeLightbox(app);
+      }
+    });
+  });
+</script>
+
+    </main>
+  
+  <section id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <h2 class="section-heading">Contact Mellowmint</h2>
+                <hr class="primary">
+                <p>Have a question or want to get in touch? Email us or connect on social media!</p>
+            </div>
+            <div class="col-lg-4 col-lg-offset-2 text-center">
+                <a href="mailto:mellowmint.app@gmail.com">
+                    <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+                    <p>mellowmint.app@gmail.com</p>
+                </a>
+            </div>
+            <div class="col-lg-2 text-center">
+                <a href="https://twitter.com/mellowmintapp">
+                    <i class="fa fa-twitter fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+                    <p>@mellowmintapp</p>
+                </a>
+            </div>
+            <div class="col-lg-2 text-center">
+                <a href="https://github.com/mellowmintapp">
+                    <i class="fa fa-github fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+                    <p>mellowmintapp</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+  <!-- jQuery -->
+<script src="js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="js/jquery.easing.min.js"></script>
+<script src="js/jquery.fittext.js"></script>
+<script src="js/wow.min.js"></script>
+
+<!-- AOS - Animate on Scroll -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="js/creative.js"></script>
+
+<!-- Initialize AOS -->
+<script>
+  AOS.init({
+    once: true,
+    duration: 600,
+    offset: 100
+  });
+</script>
+
+
+</body>
+
+</html>
