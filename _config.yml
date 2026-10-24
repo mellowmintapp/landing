@@ -14,3 +14,4 @@ markdown: kramdown
 # Internal docs live in the repo but should not be published on the site
 exclude:
   - docs/
+  - vendor/
