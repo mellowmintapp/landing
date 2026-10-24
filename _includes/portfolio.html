@@ -316,6 +316,15 @@
     text-decoration: none;
   }
 
+  .store-coming-soon,
+  .store-coming-soon:hover {
+    background: #718096;
+    box-shadow: none;
+    color: white;
+    cursor: default;
+    transform: none;
+  }
+
   @media (max-width: 768px) {
     .featured-header h2 {
       font-size: 2em;
@@ -350,9 +359,7 @@
                 <a href="https://apps.apple.com/us/app/memory-by-seasons/id6753765713" class="btn-store">
                   <i class="fa fa-apple"></i> App Store
                 </a>
-                <a href="https://play.google.com/store" class="btn-store">
-                  <i class="fa fa-android"></i> Google Play
-                </a>
+                <span class="btn-store store-coming-soon" aria-disabled="true"><i class="fa fa-android"></i> Google Play — Coming Soon</span>
               </div>
             </div>
           </div>
@@ -367,12 +374,8 @@
               <h3>Closet Flow</h3>
               <p>Organize your wardrobe, plan outfits, and simplify your mornings with Closet Flow.</p>
               <div class="featured-buttons">
-                <a href="https://apps.apple.com/" class="btn-store">
-                  <i class="fa fa-apple"></i> App Store
-                </a>
-                <a href="https://play.google.com/store" class="btn-store">
-                  <i class="fa fa-android"></i> Google Play
-                </a>
+                <span class="btn-store store-coming-soon" aria-disabled="true"><i class="fa fa-apple"></i> App Store — Coming Soon</span>
+                <span class="btn-store store-coming-soon" aria-disabled="true"><i class="fa fa-android"></i> Google Play — Coming Soon</span>
               </div>
             </div>
           </div>
