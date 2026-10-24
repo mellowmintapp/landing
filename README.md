@@ -13,10 +13,12 @@ A memory board game where you flip tiles to match the correct ones, season by se
 - Score tracking
 
 ### Closet Flow
-Organize your wardrobe, plan outfits, and simplify your mornings with Closet Flow.
-- Wardrobe cataloging
-- Outfit planning calendar
-- Style inspiration feed
+Organize your wardrobe and get outfit ideas for the day's weather.
+- Wardrobe cataloging (free up to 50 items; Pro unlimited)
+- Rule-based outfit suggestions
+- Weather-aware outfit picks
+- Brand management
+- Free to start; Closet Flow Pro is $4.99/month or $29.99/year
 
 ## Setup and Installation
 
