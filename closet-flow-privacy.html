@@ -1,0 +1,132 @@
+---
+layout: front
+title: Closet Flow Privacy Policy
+description: Information handling, service providers, and privacy disclosures specific to Closet Flow.
+---
+
+<style>
+  .privacy-hero {
+    background: linear-gradient(135deg, #F05F40 0%, #e8491d 100%);
+    color: #fff;
+    padding: 90px 0 70px;
+    text-align: center;
+    position: relative;
+  }
+  .privacy-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0,0,0,0.18) 0%, rgba(0,0,0,0.12) 100%);
+    pointer-events: none;
+  }
+  .privacy-hero .container { position: relative; z-index: 1; }
+  .privacy-hero h1 {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 3em;
+    font-weight: 700;
+    margin: 0 0 10px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  }
+  .privacy-hero p.hero-subtitle {
+    font-size: 1.1em;
+    margin: 0;
+    color: #fff;
+    opacity: 0.98;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.25);
+  }
+
+  .privacy-card {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+    padding: 30px 26px;
+    max-width: 900px;
+    margin: -20px auto 60px; /* was -40px; move content down below header */
+  }
+  .privacy-card h2, .privacy-card h3 {
+    color: #2d3748;
+    margin-top: 18px;
+    font-weight: 700;
+  }
+  .privacy-card p, .privacy-card li {
+    color: #4a5568;
+    line-height: 1.7;
+    font-size: 1.05em;
+  }
+  .privacy-card ul { margin-left: 20px; }
+  .privacy-card a { color: #F05F40; font-weight: 600; text-decoration: none; }
+  .privacy-card a:hover { text-decoration: underline; }
+
+  .back-link { text-align: center; margin-top: 16px; }
+  .btn-primary-gradient {
+    background: linear-gradient(135deg, #F05F40 0%, #e8491d 100%);
+    color: #fff !important;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 22px;
+    font-weight: 600;
+    display: inline-block;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-decoration: none;
+  }
+  .btn-primary-gradient:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(240,95,64,0.35);
+    color: #fff !important;
+  }
+
+  @media (max-width: 768px) {
+    .privacy-hero h1 { font-size: 2.2em; }
+    .privacy-card { margin: 20px 16px 50px; padding: 24px 18px; } /* was -30px; ensure spacing on mobile */
+  }
+</style>
+
+<header class="privacy-hero" aria-label="Closet Flow Privacy Policy">
+  <div class="container">
+    <h1>Closet Flow Privacy Policy</h1>
+    <p class="hero-subtitle"><em>Last updated: November 8, 2026</em></p>
+  </div>
+</header>
+
+<section class="privacy-card" aria-labelledby="policy-title">
+  <h2 id="policy-title" class="sr-only">Closet Flow Privacy Policy</h2>
+
+  <p>This policy describes only how Closet Flow handles information. Closet Flow is one of the <a href="/apps.html">apps provided by MellowMint</a>. The app works offline, and signed-in accounts can sync data across devices. These disclosures do not apply to other MellowMint apps.</p>
+  <p><a href="/privacy.html">View privacy information for all MellowMint apps</a>.</p>
+
+  <h3>1. Information Closet Flow Handles</h3>
+  <ul>
+    <li><strong>Account and profile information:</strong> Email and Google sign-in authenticate your account. The app can store profile details such as your name, gender, and profile photo.</li>
+    <li><strong>Closet and outfit information:</strong> Clothing details, brands, categories, photos, saved outfits, and related profile data are stored locally and, for signed-in accounts, synced to cloud services.</li>
+    <li><strong>Location and weather:</strong> When you grant location permission, the app sends your coordinates to request current weather. You can also search for weather by a city or location name. Weather results are cached on your device.</li>
+    <li><strong>Brand and product lookups:</strong> Brand searches use Brandfetch. Product lookups for supported Amazon, H&amp;M, and ASOS links use APIs provided through RapidAPI. These requests may include the search text, brand identifier, or product identifier needed to return results.</li>
+  </ul>
+
+  <h3>2. Storage and Service Providers</h3>
+  <p>Closet Flow uses Supabase for account authentication, cloud database and file storage, real-time synchronization, and server-side functions. Weather requests are sent through a Supabase function to WeatherAPI. Brand and product lookup requests are sent to Brandfetch or RapidAPI and the relevant product API. These providers process information to return the requested app features, subject to their own privacy and retention practices.</p>
+  <p>Optional subscriptions use your app store and RevenueCat to process purchases, restore purchases, and determine Pro access. RevenueCat processes app-user identifiers and purchase or subscription information; the app does not collect your payment-card details. Account deletion does not automatically cancel a store subscription.</p>
+
+  <h3>3. Location Permission</h3>
+  <p>Location is requested only while the app is in use for weather-based suggestions. The app sends coordinates to its weather service; it does not need location permission for the rest of the app. You can change or revoke this permission in your device settings, after which location-based weather may be unavailable.</p>
+
+  <h3>4. Retention and Account Deletion</h3>
+  <p>Closet Flow keeps local data on your device for offline use and syncs account data to cloud services when you sign in. The app includes an account deletion flow that sends a request to a configured server-side function. The server-side deletion function was not available for review, so the exact scope and timing of deletion, including backups and copies held by service providers, could not be verified. Contact us at the email below for help with an account deletion request.</p>
+  <p>For weather rate limiting, the current backend source records the account ID and time of each request. It removes older entries when that account makes a later weather request; no scheduled cleanup or fixed maximum retention period for inactive accounts was found in the source reviewed. The deployed backend may differ.</p>
+
+  <h3>5. Other MellowMint Apps</h3>
+  <p>Memory by Seasons and Fun with Crosswords have their own functionality and data practices. See the <a href="/privacy.html">MellowMint privacy directory</a> for guidance on finding the relevant app's disclosures.</p>
+
+  <h3>6. Changes to This Policy</h3>
+  <p>We may update this Privacy Policy as Closet Flow changes. Updates will be posted here and reflected in Closet Flow's app store listings.</p>
+
+  <h3>7. Contact Us</h3>
+  <p>For questions, contact:<br>
+  📧 <a href="mailto:mellowmint.app@gmail.com">mellowmint.app@gmail.com</a><br>
+  🌐 <a href="https://mellowmintapp.com/">https://mellowmintapp.com/</a></p>
+  <p>See also the <a href="/closet-flow-terms.html">Closet Flow Terms of Service</a>.</p>
+
+  <div class="back-link">
+    <a href="/" class="btn-primary-gradient" aria-label="Back to home">Back to Home</a>
+  </div>
+</section>

@@ -20,6 +20,15 @@ Organize your wardrobe and get outfit ideas for the day's weather.
 - Brand management
 - Free to start; Closet Flow Pro is $4.99/month or $29.99/year, with a free trial. Pro includes weather, outfit suggestions, and occasion ideas.
 
+### Fun with Crosswords
+A crossword puzzle app.
+
+## App-specific policies
+
+The root [Privacy directory](./privacy.html) and [Terms directory](./terms.html) serve the entire MellowMint portfolio. They link to the [Closet Flow Privacy Policy](./closet-flow-privacy.html) and [Closet Flow Terms](./closet-flow-terms.html); Closet Flow's features and subscription terms must not be applied to other apps.
+
+Separate policies for Memory by Seasons and Fun with Crosswords still need verified app-specific disclosures before publication. Do not infer their data practices from Closet Flow. Review legal drafts before publishing, deploy the new pages, and update Closet Flow's store policy URLs to the app-specific pages.
+
 ## Setup and Installation
 
 This site is built with Jekyll. To run locally:
@@ -49,7 +58,6 @@ This site is built with Jekyll. To run locally:
 
 ## Links
 
-- [Website](https://mellowmintapps.com) 
+- [Website](https://mellowmintapp.com/)
 - [Twitter](https://twitter.com/mellowmintapp)
 - [GitHub](https://github.com/mellowmintapp)
-
