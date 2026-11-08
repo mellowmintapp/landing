@@ -109,9 +109,10 @@ function drawPhone(image, time) {
   promoContext.restore();
 }
 
-function drawScene(scene, localTime) {
+function drawScene(scene, localTime, finalScene) {
   promoContext.save();
-  promoContext.globalAlpha = Math.min(1, localTime / 0.35, (5 - localTime) / 0.35);
+  const fadeOut = finalScene ? 1 : (5 - localTime) / 0.35;
+  promoContext.globalAlpha = Math.min(1, localTime / 0.35, fadeOut);
   const x = promoVertical ? 80 : 120;
   const textWidth = promoVertical ? 920 : 1060;
   promoContext.fillStyle = '#57368a';
@@ -163,7 +164,7 @@ function drawPromotion(seconds) {
   promoContext.fillStyle = '#57368a';
   promoContext.font = 'bold 34px Arial';
   promoContext.fillText('MellowMint / Closet Flow', promoVertical ? 80 : 120, promoVertical ? 110 : 100);
-  drawScene(promoScenes[index], bounded % 5);
+  drawScene(promoScenes[index], bounded % 5, index === promoScenes.length - 1);
   drawFooter(index);
 }
 

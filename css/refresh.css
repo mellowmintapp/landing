@@ -25,6 +25,16 @@ body.mellowmint-site h3 {
 }
 
 body.mellowmint-site a { color: var(--purple); }
+
+body.mellowmint-site section.container.app-policy {
+  max-width: 900px;
+  padding: 40px 20px 60px;
+}
+
+.app-policy ul {
+  padding-left: 24px;
+}
+
 body.mellowmint-site a:focus-visible,
 body.mellowmint-site button:focus-visible,
 body.mellowmint-site video:focus-visible {
