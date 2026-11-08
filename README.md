@@ -28,6 +28,27 @@ Optimized WebP copies live in [img/portfolio/closet-flow/current/](./img/portfol
 
 Keep the other MellowMint apps intact. Do not advertise universal product-link imports, live notification forecasts, guaranteed trials, or store downloads before availability is verified.
 
+### Promotional videos
+
+Two silent, caption-led, approximately 30-second H.264 MP4s are available in [videos/closet-flow/](./videos/closet-flow/):
+- [Vertical, 1080 x 1920](./videos/closet-flow/closet-flow-vertical.mp4) for social posts
+- [Landscape, 1920 x 1080](./videos/closet-flow/closet-flow-landscape.mp4) for the website or video platforms
+
+The catalog embeds the landscape version with controls and a lightweight poster. It does not autoplay or preload the video. Captions are drawn into the video, and the adjacent text provides a readable summary. There is no music, voiceover, or claim of store availability.
+
+The editable source is [docs/closet-flow/promo.html](./docs/closet-flow/promo.html) and [promo.js](./docs/closet-flow/promo.js), excluded from the public Jekyll build. To regenerate:
+1. Serve the repository root locally (for example, `python3 -m http.server 4177 --bind 127.0.0.1`).
+2. Open `http://127.0.0.1:4177/docs/closet-flow/promo.html` in a Chromium browser supporting H.264 `avc3` MediaRecorder.
+3. Run `await recordPromotion('vertical')` or `await recordPromotion('landscape')` in the browser console, or through Playwright's `page.evaluate`. Keep the page foregrounded for the entire recording.
+4. Optimize each captured MP4 before publishing: `ffmpeg -i captured.mp4 -c:v libx264 -crf 20 -preset fast -pix_fmt yuv420p -movflags +faststart -an published.mp4`. This converts the fragmented browser capture to a broadly compatible MP4 with complete duration metadata available immediately.
+5. Save the optimized MP4 and downloaded WebP poster to the video folder. Run formats sequentially, not concurrently.
+
+The renderer checks duration and dimensions before exporting. The published versions were captured using Playwright, optimized with FFmpeg, and checked by full decode and browser frame sampling. Verify all six scenes, including the final frame, after regenerating; a successful capture alone does not prove a playable export.
+
+### Visual design
+
+[css/refresh.css](./css/refresh.css) coordinates the mint/cream/purple theme, shared navigation/footer, responsive app cards, accessible focus outlines, and reduced-motion styles. Homepage-specific hero content does not repeat above every app or policy page. The original Bootstrap layout and each app's identity and links are preserved.
+
 ### Fun with Crosswords
 A crossword puzzle app.
 
