@@ -1,0 +1,295 @@
+:root {
+  --mint: #dcefe5;
+  --cream: #faf8f2;
+  --ink: #253d36;
+  --muted: #52655e;
+  --purple: #57368a;
+  --border: #dae4db;
+}
+
+body.mellowmint-site {
+  color: var(--ink);
+  background: var(--cream);
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  letter-spacing: 0;
+}
+
+body.mellowmint-site h1,
+body.mellowmint-site h2,
+body.mellowmint-site h3 {
+  color: var(--ink);
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+
+body.mellowmint-site a { color: var(--purple); }
+body.mellowmint-site a:focus-visible,
+body.mellowmint-site button:focus-visible,
+body.mellowmint-site video:focus-visible {
+  outline: 3px solid var(--purple);
+  outline-offset: 4px;
+}
+
+body.mellowmint-site #mainNav {
+  background: #faf8f2;
+  border-bottom: 1px solid var(--border);
+  padding: 10px 20px;
+  min-height: 74px;
+}
+
+body.mellowmint-site #mainNav .navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ink);
+  font-size: 23px;
+  text-transform: none;
+  letter-spacing: -0.03em;
+}
+
+.brand-mark {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--mint);
+  width: 34px;
+  height: 34px;
+  border-radius: 12px;
+  color: var(--purple);
+}
+
+body.mellowmint-site #mainNav .nav > li > a {
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+body.mellowmint-site #mainNav .nav > li > a:hover { color: var(--purple); }
+body.mellowmint-site .navbar-toggle { border-color: var(--border); }
+body.mellowmint-site main { padding-top: 74px; }
+body.mellowmint-site header {
+  min-height: 650px;
+  height: auto;
+  background: radial-gradient(ellipse at 85% 20%, #e8def3, transparent 55%),
+    linear-gradient(135deg, var(--cream), var(--mint));
+  padding: 155px 24px 95px;
+}
+
+body.mellowmint-site header .header-content {
+  position: static;
+  transform: none;
+  padding: 0;
+  width: 100%;
+}
+
+body.mellowmint-site header .header-content .header-content-inner h1 {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-weight: 700;
+  font-size: clamp(38px, 5.5vw, 68px);
+  max-width: 820px;
+  margin: 18px auto 24px;
+  text-transform: none;
+}
+
+body.mellowmint-site .hero-eyebrow,
+body.mellowmint-site .section-eyebrow {
+  color: var(--purple);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+body.mellowmint-site header .header-content .header-content-inner .hero-eyebrow {
+  color: var(--purple);
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+body.mellowmint-site header .hero-description {
+  color: var(--muted);
+  font-size: 20px;
+  font-weight: 400;
+  max-width: 640px;
+  margin: 0 auto 30px;
+}
+
+body.mellowmint-site .btn,
+body.mellowmint-site .btn-view-app,
+body.mellowmint-site .btn-app-store,
+body.mellowmint-site .btn-google-play {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-weight: 600;
+  border-radius: 14px;
+  white-space: normal;
+  max-width: 100%;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+body.mellowmint-site .btn-primary,
+body.mellowmint-site .btn-view-app,
+body.mellowmint-site .btn-app-store,
+body.mellowmint-site .btn-google-play {
+  background: var(--purple);
+  color: white;
+  border: 1px solid var(--purple);
+}
+
+body.mellowmint-site .btn-default {
+  background: white;
+  color: var(--ink);
+  border: 1px solid var(--border);
+}
+
+body.mellowmint-site .store-coming-soon,
+body.mellowmint-site .store-coming-soon:hover {
+  background: #eef1ec;
+  color: var(--muted);
+  border-color: var(--border);
+}
+
+body.mellowmint-site section,
+body.mellowmint-site footer { padding: 72px 0; }
+body.mellowmint-site section.container { padding-left: 15px; padding-right: 15px; }
+body.mellowmint-site #about { background: white; }
+body.mellowmint-site #about .text-faded { color: var(--muted); }
+body.mellowmint-site .text-muted,
+body.mellowmint-site .portfolio-content p { color: var(--muted); }
+body.mellowmint-site hr { border-color: var(--purple); }
+body.mellowmint-site .text-primary { color: var(--purple); }
+body.mellowmint-site #services { background: var(--cream); }
+body.mellowmint-site .service-box {
+  padding: 28px 22px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+}
+
+body.mellowmint-site .service-box .fa { font-size: 32px; }
+body.mellowmint-site .service-box h3 { margin-top: 20px; }
+body.mellowmint-site .portfolio-section { background: var(--mint); }
+body.mellowmint-site .portfolio-header,
+body.mellowmint-site .featured-header { margin-bottom: 36px; }
+body.mellowmint-site .modern-portfolio-box,
+body.mellowmint-site .app-card {
+  border: 1px solid var(--border);
+  box-shadow: 0 12px 32px rgba(37, 61, 54, 0.06);
+  border-radius: 26px;
+}
+
+body.mellowmint-site .portfolio-badge,
+body.mellowmint-site .app-badge {
+  background: #eee8f5;
+  color: #57368a;
+  font-size: 12px;
+}
+
+body.mellowmint-site .featured-apps-section { background: var(--cream); }
+body.mellowmint-site .featured-app-box { border-radius: 24px; }
+body.mellowmint-site .featured-overlay { background: #253d36; }
+body.mellowmint-site .featured-app-box:focus-within .featured-overlay { opacity: 1; }
+body.mellowmint-site .featured-app-box:focus-within .featured-content { transform: none; }
+body.mellowmint-site .featured-content h3 { color: white; }
+body.mellowmint-site .btn-store { color: var(--purple); }
+body.mellowmint-site .closet-featured { background: var(--purple); }
+body.mellowmint-site .closet-featured .featured-overlay { background: none; }
+body.mellowmint-site .bg-dark { background: var(--ink); padding: 60px 20px; }
+body.mellowmint-site .bg-dark h2,
+body.mellowmint-site .bg-dark p { color: white; }
+body.mellowmint-site .apps-hero,
+body.mellowmint-site .contact-hero {
+  background: linear-gradient(120deg, var(--mint), #eee8f5);
+  padding: 55px 20px;
+  margin-bottom: 40px;
+}
+body.mellowmint-site .apps-hero h1,
+body.mellowmint-site .apps-hero p,
+body.mellowmint-site .contact-hero h1,
+body.mellowmint-site .contact-hero p {
+  color: var(--ink);
+  text-shadow: none;
+}
+body.mellowmint-site .contact-hero::before { background: none; }
+body.mellowmint-site .bg-dark .container,
+body.mellowmint-site .apps-hero .container,
+body.mellowmint-site .contact-hero .container { max-width: 100%; }
+body.mellowmint-site .app-header { background: #f0f4ed; }
+body.mellowmint-site .app-icon { background: white; box-shadow: none; }
+body.mellowmint-site .app-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+body.mellowmint-site .app-actions .btn-app-store { margin-right: 0; }
+body.mellowmint-site #contact {
+  background: white;
+  border-top: 1px solid var(--border);
+}
+body.mellowmint-site #contact .fa { font-size: 26px; }
+body.mellowmint-site #contact a { overflow-wrap: anywhere; }
+body.mellowmint-site .footer-policies { margin: 36px 16px 10px; }
+body.mellowmint-site .footer-credit { font-size: 13px; color: var(--muted); }
+body.mellowmint-site .promo-video { padding: 24px 30px; background: #eee8f5; }
+body.mellowmint-site .promo-video h3 { font-size: 22px; margin-top: 0; }
+body.mellowmint-site .promo-video video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border-radius: 16px;
+  background: var(--cream);
+}
+body.mellowmint-site .promo-video p { font-size: 13px; margin: 12px 0 0; }
+
+@media (max-width: 767px) {
+  body.mellowmint-site #mainNav { padding: 10px 0; }
+  body.mellowmint-site header { min-height: 0; padding: 130px 22px 65px; }
+  body.mellowmint-site header .hero-description { font-size: 17px; }
+  body.mellowmint-site section,
+  body.mellowmint-site footer { padding: 48px 0; }
+  body.mellowmint-site .service-box { margin-bottom: 18px; }
+  body.mellowmint-site .portfolio-header h2,
+  body.mellowmint-site .featured-header h2 { font-size: 30px; }
+  body.mellowmint-site .featured-app-box:not(.closet-featured) {
+    height: auto;
+    background: var(--ink);
+  }
+  body.mellowmint-site .featured-app-box:not(.closet-featured) > img {
+    height: 280px;
+    object-fit: contain;
+  }
+  body.mellowmint-site .featured-app-box:not(.closet-featured) .featured-overlay {
+    position: static;
+    opacity: 1;
+  }
+  body.mellowmint-site .featured-content { transform: none; padding: 24px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.mellowmint-site *,
+  body.mellowmint-site *::before,
+  body.mellowmint-site *::after,
+  body.mellowmint-site .animated,
+  body.mellowmint-site [data-aos],
+  body.mellowmint-site .modern-portfolio-box,
+  body.mellowmint-site .portfolio-image-wrapper img,
+  body.mellowmint-site .featured-app-box img,
+  body.mellowmint-site .featured-overlay,
+  body.mellowmint-site .featured-content,
+  body.mellowmint-site .app-card,
+  body.mellowmint-site .carousel-inner .item,
+  body.mellowmint-site .carousel-inner img,
+  body.mellowmint-site .btn,
+  body.mellowmint-site .btn-view-app,
+  body.mellowmint-site .btn-store {
+    animation: none;
+    transition: none;
+    scroll-behavior: auto;
+  }
+}
