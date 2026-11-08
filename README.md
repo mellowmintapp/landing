@@ -45,6 +45,8 @@ The editable source is [docs/closet-flow/promo.html](./docs/closet-flow/promo.ht
 
 The renderer checks duration and dimensions before exporting. The published versions were captured using Playwright, optimized with FFmpeg, and checked by full decode and browser frame sampling. Verify all six scenes, including the final frame, after regenerating; a successful capture alone does not prove a playable export.
 
+Scene transitions fade between screenshots, but the closing Free/Pro message stays visible through the final frame so playback ends on the call to action rather than an empty background.
+
 ### Visual design
 
 [css/refresh.css](./css/refresh.css) coordinates the mint/cream/purple theme, shared navigation/footer, responsive app cards, accessible focus outlines, and reduced-motion styles. Homepage-specific hero content does not repeat above every app or policy page. The original Bootstrap layout and each app's identity and links are preserved.
@@ -63,6 +65,8 @@ A crossword puzzle app.
 The root [Privacy directory](./privacy.html) and [Terms directory](./terms.html) serve the entire MellowMint portfolio. They link to the [Closet Flow Privacy Policy](./closet-flow-privacy.html) and [Closet Flow Terms](./closet-flow-terms.html); Closet Flow's features and subscription terms must not be applied to other apps.
 
 Separate policies for Memory by Seasons and Fun with Crosswords still need verified app-specific disclosures before publication. Do not infer their data practices from Closet Flow. Review legal drafts before publishing, deploy the new pages, and update Closet Flow's store policy URLs to the app-specific pages.
+
+Closet Flow's Privacy and Terms pages share the `app-policy` layout with a 900px maximum width and 20px side padding. Their section headings are unnumbered, and privacy list markers are inset for readable mobile spacing. The public [feature overview](./docs/closet-flow/FEATURES.md) covers customer features and plan limits, not internal testing or release notes.
 
 ## Setup and Installation
 
