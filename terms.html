@@ -26,6 +26,7 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/main.css" type="text/css">
+    <link rel="stylesheet" href="/css/refresh.css" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -37,18 +38,18 @@
 </head>
 
 
-<body id="page-top">
+<body id="page-top" class="mellowmint-site">
   <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" aria-controls="bs-example-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand page-scroll" href="/">Mellowmint</a>
+            <a class="navbar-brand" href="/" aria-label="MellowMint home"><span class="brand-mark" aria-hidden="true">m</span> MellowMint</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -72,27 +73,6 @@
     </div>
     <!-- /.container-fluid -->
 </nav>
-
-  <header>
-    <div class="header-content">
-        <div class="header-content-inner text-center">
-<!--            <img src="img/header.jpg" alt="Mellowmint Logo" class="header-logo">-->
-            <h1>Apps that soothe, organize, and spark joy.</h1>
-            <hr>
-            <div style="margin: 20px 0;">
-                <a href="/#portfolio" class="btn btn-primary btn-xl">Featured Apps</a>
-            </div>
-            <div>
-                <a href="https://apps.apple.com/us/developer/subrina-a-thompson/id1393761968" class="btn btn-default" style="margin-right:10px;">
-                    <i class="fa fa-apple"></i> App Store
-                </a>
-                <span class="btn btn-default" aria-disabled="true">
-                    <i class="fa fa-android"></i> Google Play — Coming Soon
-                </span>
-            </div>
-        </div>
-    </div>
-</header>
 
   
     <main>
@@ -118,11 +98,12 @@
 
     </main>
   
-  <section id="contact">
+  <footer id="contact">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 text-center">
-                <h2 class="section-heading">Contact Mellowmint</h2>
+                <p class="section-eyebrow">Let&rsquo;s stay in touch</p>
+                <h2 class="section-heading">Made with care. Here to help.</h2>
                 <hr class="primary">
                 <p>Have a question or want to get in touch? Email us or connect on social media!</p>
             </div>
@@ -145,8 +126,10 @@
                 </a>
             </div>
         </div>
+        <p class="footer-policies text-center"><a href="/privacy.html">App privacy policies</a> &middot; <a href="/terms.html">App terms</a> &middot; <a href="/apps.html">Explore all apps</a></p>
+        <p class="footer-credit text-center">MellowMint Apps &middot; 2026</p>
     </div>
-</section>
+</footer>
 
   <!-- jQuery -->
 <script src="js/jquery.js"></script>

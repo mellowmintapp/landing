@@ -26,6 +26,7 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/main.css" type="text/css">
+    <link rel="stylesheet" href="/css/refresh.css" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -37,18 +38,18 @@
 </head>
 
 
-<body id="page-top">
+<body id="page-top" class="mellowmint-site">
   <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" aria-controls="bs-example-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand page-scroll" href="/">Mellowmint</a>
+            <a class="navbar-brand" href="/" aria-label="MellowMint home"><span class="brand-mark" aria-hidden="true">m</span> MellowMint</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -73,14 +74,15 @@
     <!-- /.container-fluid -->
 </nav>
 
-  <header>
+  
+    <header>
     <div class="header-content">
         <div class="header-content-inner text-center">
-<!--            <img src="img/header.jpg" alt="Mellowmint Logo" class="header-logo">-->
+            <p class="hero-eyebrow">A little more ease in your everyday</p>
             <h1>Apps that soothe, organize, and spark joy.</h1>
-            <hr>
+            <p class="hero-description">A calmer closet. A playful pause. A fresh challenge.<br>Thoughtful mobile apps, made for real life.</p>
             <div style="margin: 20px 0;">
-                <a href="/#portfolio" class="btn btn-primary btn-xl">Featured Apps</a>
+                <a href="/#portfolio" class="btn btn-primary btn-xl">Find your next favorite app</a>
             </div>
             <div>
                 <a href="https://apps.apple.com/us/developer/subrina-a-thompson/id1393761968" class="btn btn-default" style="margin-right:10px;">
@@ -94,42 +96,17 @@
     </div>
 </header>
 
-  
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mellowmint</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Improve readability of About section over orange gradient */
-        #about .section-heading {
-          color: #ffffff; /* strong contrast */
-          text-shadow: 2px 2px 4px rgba(0,0,0,0.35);
-        }
-        #about .text-faded {
-          color: rgba(255,255,255,0.98); /* nearly solid white */
-          text-shadow: 1px 1px 2px rgba(0,0,0,0.25);
-        }
-    </style>
-</head>
-<body>
-
-    <section class="bg-primary" id="about" data-aos="fade-up" data-aos-duration="800">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">About Mellowmint</h2>
-                    <hr class="light">
-                    <p class="text-faded">Mellowmint creates simple, elegant apps that help you relax, organize, and find joy in everyday moments. Our featured apps are designed to make your life a little easier and a lot more delightful.</p>
-                </div>
+    <section class="bg-primary" id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <p class="section-eyebrow">Meet MellowMint</p>
+                <h2 class="section-heading">Small apps. Thoughtfully made.</h2>
+                <p class="text-faded">We create simple, welcoming apps that help you organize what matters, take a playful break, and find a little joy in everyday moments.</p>
             </div>
         </div>
-    </section>
-
-</body>
-</html>
+    </div>
+</section>
 
     <section id="services">
     <div class="container">
@@ -653,17 +630,19 @@
       <div class="container text-center">
           <div class="call-to-action">
               <h2>Experience Mindful Apps</h2>
-              <a href="#portfolio" class="btn btn-default btn-xl wow tada">Try Memory by Seasons & Closet Flow</a>
+              <p>Find a little organization, relaxation, or challenge.</p>
+              <a href="/apps.html" class="btn btn-default btn-xl">Explore the MellowMint collection</a>
           </div>
       </div>
   </aside>
 
   
-  <section id="contact">
+  <footer id="contact">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 text-center">
-                <h2 class="section-heading">Contact Mellowmint</h2>
+                <p class="section-eyebrow">Let&rsquo;s stay in touch</p>
+                <h2 class="section-heading">Made with care. Here to help.</h2>
                 <hr class="primary">
                 <p>Have a question or want to get in touch? Email us or connect on social media!</p>
             </div>
@@ -686,8 +665,10 @@
                 </a>
             </div>
         </div>
+        <p class="footer-policies text-center"><a href="/privacy.html">App privacy policies</a> &middot; <a href="/terms.html">App terms</a> &middot; <a href="/apps.html">Explore all apps</a></p>
+        <p class="footer-credit text-center">MellowMint Apps &middot; 2026</p>
     </div>
-</section>
+</footer>
 
   <!-- jQuery -->
 <script src="js/jquery.js"></script>
