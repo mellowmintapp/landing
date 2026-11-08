@@ -18,7 +18,7 @@ Organize your wardrobe and get outfit ideas for the day's weather.
 - Rule-based outfit suggestions
 - Weather-aware outfit picks
 - Brand management
-- Free to start; Closet Flow Pro is $4.99/month or $29.99/year
+- Free to start; Closet Flow Pro is $4.99/month or $29.99/year, with a free trial. Pro includes weather, outfit suggestions, and occasion ideas.
 
 ## Setup and Installation
 
