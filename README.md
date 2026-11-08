@@ -49,6 +49,8 @@ The renderer checks duration and dimensions before exporting. The published vers
 
 [css/refresh.css](./css/refresh.css) coordinates the mint/cream/purple theme, shared navigation/footer, responsive app cards, accessible focus outlines, and reduced-motion styles. Homepage-specific hero content does not repeat above every app or policy page. The original Bootstrap layout and each app's identity and links are preserved.
 
+Homepage app cards use a three-column grid on desktop and a single column below 992px, with a consistent 24px gap. They do not use entrance scaling or hidden-on-scroll animations, which can leave large blank spaces when animation scripts are unavailable or motion is reduced.
+
 ### Fun with Crosswords
 A crossword puzzle app.
 
