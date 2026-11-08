@@ -175,6 +175,29 @@ body.mellowmint-site .service-box h3 { margin-top: 20px; }
 body.mellowmint-site .portfolio-section { background: var(--mint); }
 body.mellowmint-site .portfolio-header,
 body.mellowmint-site .featured-header { margin-bottom: 36px; }
+body.mellowmint-site .homepage-app-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 24px;
+  margin: 0;
+}
+body.mellowmint-site .homepage-app-grid::before,
+body.mellowmint-site .homepage-app-grid::after { display: none; }
+body.mellowmint-site .homepage-app-grid > div {
+  width: auto;
+  min-width: 0;
+  padding: 0;
+  float: none;
+}
+body.mellowmint-site .homepage-app-grid .modern-portfolio-box,
+body.mellowmint-site .homepage-app-grid .featured-app-box { margin-bottom: 0; }
+
+@media (min-width: 992px) {
+  body.mellowmint-site .homepage-app-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
 body.mellowmint-site .modern-portfolio-box,
 body.mellowmint-site .app-card {
   border: 1px solid var(--border);
