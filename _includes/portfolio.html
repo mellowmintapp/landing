@@ -56,6 +56,20 @@
     transform: scale(1.05);
   }
 
+  .portfolio-image-wrapper.closet-preview {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    padding: 16px;
+    background: linear-gradient(135deg, #eee7f8 0%, #fff0d9 100%);
+  }
+
+  .closet-preview img {
+    width: 45%;
+    height: 100%;
+    object-fit: contain;
+  }
+
   .portfolio-content {
     padding: 30px 25px;
     text-align: center;
@@ -152,13 +166,17 @@
       <!-- Closet Flow -->
       <div class="col-md-4 col-sm-12" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
         <div class="modern-portfolio-box">
-          <div class="portfolio-image-wrapper">
-            <img src="img/portfolio/closet-flow/dashboard.png" alt="Closet Flow screenshot">
+          <div class="portfolio-image-wrapper closet-preview">
+            {% assign closet_category = site.data.closet_flow.screenshots[0] %}
+            {% assign closet_look = site.data.closet_flow.screenshots[1] %}
+            <img src="{{ '/img/portfolio/closet-flow/current/' | append: closet_category.image | relative_url }}" alt="{{ closet_category.alt | escape }}" width="768" height="1668" loading="lazy" decoding="async">
+            <img src="{{ '/img/portfolio/closet-flow/current/' | append: closet_look.image | relative_url }}" alt="{{ closet_look.alt | escape }}" width="768" height="1668" loading="lazy" decoding="async">
           </div>
           <div class="portfolio-content">
             <span class="portfolio-badge">👗 Wardrobe Organizer</span>
             <h3>Closet Flow</h3>
-            <p>Organize your wardrobe, plan outfits, and simplify your mornings with Closet Flow.</p>
+            <p>See what you own. Build looks you love. A visual closet with outfit planning and favorites, plus optional Pro weather tools.</p>
+            <p>Start free with 50 active items and 5 saved outfits.</p>
           </div>
           <div class="portfolio-actions text-center">
             <a href="apps.html#closet-flow" class="btn-view-app">Learn More</a>
@@ -263,6 +281,45 @@
     transform: translateY(0);
   }
 
+  .closet-featured {
+    background: #3b206d;
+    height: auto;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+  }
+
+  .closet-featured img {
+    width: 45%;
+    height: 360px;
+    object-fit: contain;
+    padding: 12px;
+  }
+
+  .closet-featured:hover img {
+    transform: none;
+  }
+
+  .closet-featured .featured-overlay {
+    position: static;
+    width: 55%;
+    background: none;
+    opacity: 1;
+  }
+
+  .closet-featured .featured-content {
+    padding: 20px 12px 20px 0;
+    transform: none;
+  }
+
+  .closet-featured .featured-content h3 {
+    font-size: 1.5em;
+  }
+
+  .closet-featured .btn-store {
+    padding: 8px 12px;
+  }
+
   .featured-badge {
     display: inline-block;
     padding: 8px 20px;
@@ -337,6 +394,25 @@
     .featured-content h3 {
       font-size: 1.5em;
     }
+
+    .featured-app-box.closet-featured {
+      display: block;
+      height: auto;
+      min-height: 0;
+    }
+
+    .closet-featured img {
+      width: 100%;
+      height: 320px;
+    }
+
+    .closet-featured .featured-overlay {
+      width: 100%;
+    }
+
+    .closet-featured .featured-content {
+      padding: 20px;
+    }
   }
 </style>
 
@@ -366,14 +442,16 @@
         </div>
       </div>
       <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="200">
-        <div class="featured-app-box">
-          <img src="img/portfolio/closet-flow/closet_brands.png" alt="Closet Flow screenshot">
+        <div class="featured-app-box closet-featured">
+          {% assign closet_favorites = site.data.closet_flow.screenshots[3] %}
+          <img src="{{ '/img/portfolio/closet-flow/current/' | append: closet_favorites.image | relative_url }}" alt="{{ closet_favorites.alt | escape }}" width="768" height="1668" loading="lazy" decoding="async">
           <div class="featured-overlay">
             <div class="featured-content">
               <span class="featured-badge">👗 Featured</span>
               <h3>Closet Flow</h3>
-              <p>Organize your wardrobe, plan outfits, and simplify your mornings with Closet Flow.</p>
+              <p>Your go-to pieces and saved looks, together. Favorites stay free.</p>
               <div class="featured-buttons">
+                <a href="apps.html#closet-flow" class="btn-store">Explore Closet Flow</a>
                 <span class="btn-store store-coming-soon" aria-disabled="true"><i class="fa fa-apple"></i> App Store — Coming Soon</span>
                 <span class="btn-store store-coming-soon" aria-disabled="true"><i class="fa fa-android"></i> Google Play — Coming Soon</span>
               </div>

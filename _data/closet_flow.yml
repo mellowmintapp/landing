@@ -1,0 +1,41 @@
+screenshots:
+  - image: categories.webp
+    alt: Closet Flow category cards with clothing photos, favorites, and piece counts
+    title: See your closet, not just a list
+    caption: Browse your clothing, shoes, and accessories by category and season.
+    plan: Free essentials
+  - image: your-look.webp
+    alt: Closet Flow outfit preview with selected clothing, shoes, and a layer
+    title: Build a look from what you own
+    caption: Choose an occasion, customize the pieces, and save a combination to wear again.
+    plan: Free outfit builder
+  - image: saved-outfits.webp
+    alt: Closet Flow saved outfits with rediscovery insights and a Daily Look preview
+    title: Give your favorite looks another outing
+    caption: Save combinations, log when you wear them, and rediscover outfits you have not worn lately.
+    plan: Free up to 5 saved outfits
+  - image: favorites.webp
+    alt: Closet Flow dashboard favorites with Outfits, Items, Brands, and Categories tabs
+    title: Keep your go-to pieces close
+    caption: Favorite outfits, items, brands, and categories, then find them quickly from your dashboard.
+    plan: Favorites stay free
+  - image: closet-items.webp
+    alt: Closet Flow photographed shoe cards with brand logos, colors, and occasion tags
+    title: Know what is already in your wardrobe
+    caption: Browse photos and details, search your pieces, and filter by favorites.
+    plan: Free up to 50 active items
+  - image: brands.webp
+    alt: Closet Flow brand cards with logos, favorite controls, and closet piece counts
+    title: Browse by the brands you wear
+    caption: Recognize your brands by their logos and see the pieces you own in each.
+    plan: Free essentials
+  - image: add-to-closet.webp
+    alt: Closet Flow photo-first item entry with camera, photo library, category, and garment colors
+    title: Start with a photo of your piece
+    caption: Add multiple angles to one item, choose its colors, and keep its details together.
+    plan: Free essentials; Pro removes the item limit
+  - image: reminders.webp
+    alt: Closet Flow reminder settings with daily and weekly options plus Pro morning and evening times
+    title: Make outfit planning a habit
+    caption: Choose daily or weekly nudges, or Pro morning and evening reminders at your own times.
+    plan: Daily and weekly free; twice daily with Pro

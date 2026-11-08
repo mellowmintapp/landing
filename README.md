@@ -13,12 +13,20 @@ A memory board game where you flip tiles to match the correct ones, season by se
 - Score tracking
 
 ### Closet Flow
-Organize your wardrobe and get outfit ideas for the day's weather.
-- Wardrobe cataloging (free up to 50 items; Pro unlimited)
-- Rule-based outfit suggestions
-- Weather-aware outfit picks
-- Brand management
-- Free to start; Closet Flow Pro is $4.99/month or $29.99/year, with a free trial. Pro includes weather, outfit suggestions, and occasion ideas.
+See what you own, build looks you love, and keep your favorites within reach.
+- Free: 50 active clothing items, 5 saved outfits, outfit building, search, favorites, and signed-in cloud sync
+- Photo-led browsing by category and brand, outfit wear logging, rediscovery, and wardrobe insights
+- Daily or weekly outfit reminders, with customizable times
+- Pro: unlimited clothing items and saved outfits, weather-aware suggestions, occasion ideas, and morning/evening reminders
+- Pro remains $4.99/month or $29.99/year; the store purchase screen confirms final pricing and any trial eligibility
+
+### Closet Flow promotional screenshots
+
+The homepage's two Closet Flow cards and the app catalog use current, authentic app screens. The eight-screen catalog and its captions are maintained in [_data/closet_flow.yml](./_data/closet_flow.yml); the lightbox reads the rendered catalog, so its order cannot drift from the carousel.
+
+Optimized WebP copies live in [img/portfolio/closet-flow/current/](./img/portfolio/closet-flow/current/). Original user attachments are unchanged. Do not publish screenshots with personal names/avatars, developer plan controls, sync failures, or active keyboards. Location text in outfit previews is permitted. Larger example collections use Pro and are labeled as such; captions distinguish a feature's Free allowance from the sample account's plan.
+
+Keep the other MellowMint apps intact. Do not advertise universal product-link imports, live notification forecasts, guaranteed trials, or store downloads before availability is verified.
 
 ### Fun with Crosswords
 A crossword puzzle app.
