@@ -51,6 +51,10 @@ The renderer checks duration and dimensions before exporting. The published vers
 
 Homepage app cards use a three-column grid on desktop and a single column below 992px, with a consistent 24px gap. They do not use entrance scaling or hidden-on-scroll animations, which can leave large blank spaces when animation scripts are unavailable or motion is reduced.
 
+The app catalog uses a 32px gap. On wide screens, Memory by Seasons and Fun with Crosswords stack in the left column while the longer Closet Flow card occupies the right; Crosswords does not wait for Closet Flow to end. Below 1200px the original app reading order is preserved in a single column.
+
+Closet Flow's gallery advances every seven seconds with a Pause/Resume control. Hover, keyboard focus, an open lightbox, or a hidden page temporarily pauses it; reduced-motion preferences disable auto-play while keeping manual arrows available. [js/closet-carousel.js](./js/closet-carousel.js) initializes this behavior after Bootstrap loads.
+
 ### Fun with Crosswords
 A crossword puzzle app.
 

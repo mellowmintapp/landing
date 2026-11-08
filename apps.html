@@ -473,9 +473,9 @@
 </div>
 
 <section class="container" style="padding-bottom: 80px;">
-  <div class="row">
+  <div class="app-catalog-grid">
     <!-- Memory by Seasons -->
-    <div class="col-lg-6" id="memory-by-seasons" data-aos="fade-up" data-aos-duration="800">
+    <div id="memory-by-seasons">
       <div class="app-card">
         <div class="app-header text-center">
           <div class="app-icon">🎮</div>
@@ -570,7 +570,7 @@
       </div>
     </div>
     <!-- Closet Flow -->
-    <div class="col-lg-6" id="closet-flow" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+    <div id="closet-flow">
       <div class="app-card">
         <div class="app-header text-center">
           <div class="app-icon">👗</div>
@@ -579,7 +579,8 @@
           <p class="app-description">Less &ldquo;what should I wear?&rdquo; More outfits from what you already own. Turn your wardrobe into a visual closet, build looks, and keep your favorites within reach.</p>
         </div>
         <div class="carousel-container">
-          <p class="expand-hint"><i class="fa fa-search-plus" aria-hidden="true"></i> Tap an image to enlarge. Use the arrows to explore.</p>
+          <p class="expand-hint"><i class="fa fa-search-plus" aria-hidden="true"></i> Tap an image to enlarge. Slides rotate every 7 seconds.</p>
+          <p class="text-center"><button id="closet-autoplay" type="button" class="btn btn-default" aria-controls="carouselCloset" aria-pressed="false">Pause slideshow</button></p>
           <div id="carouselCloset" class="carousel slide" data-interval="false" aria-label="Closet Flow feature screenshots">
             <ol class="carousel-indicators" aria-hidden="true">
               
@@ -722,10 +723,8 @@
         </div>
       </div>
     </div>
-  </div>
-  <div class="row">
     <!-- Fun with Crosswords -->
-    <div class="col-lg-6" id="fun-with-crosswords" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+    <div id="fun-with-crosswords">
       <div class="app-card">
         <div class="app-header text-center">
           <div class="app-icon">🧩</div>
@@ -911,12 +910,14 @@
     counter.textContent = (index + 1) + ' / ' + images[app].length;
     lightbox.style.display = 'block';
     document.body.style.overflow = 'hidden';
+    document.dispatchEvent(new CustomEvent('gallery-lightbox', { detail: true }));
   }
 
   function closeLightbox(app) {
     const lightbox = document.getElementById('lightbox-' + app);
     lightbox.style.display = 'none';
     document.body.style.overflow = 'auto';
+    document.dispatchEvent(new CustomEvent('gallery-lightbox', { detail: false }));
   }
 
   function changeImage(app, direction) {
@@ -1009,6 +1010,7 @@
 
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.min.js"></script>
+<script src="/js/closet-carousel.js"></script>
 
 <!-- Plugin JavaScript -->
 <script src="js/jquery.easing.min.js"></script>
@@ -1029,7 +1031,6 @@
     offset: 100
   });
 </script>
-
 
 </body>
 

@@ -242,6 +242,28 @@ body.mellowmint-site .bg-dark .container,
 body.mellowmint-site .apps-hero .container,
 body.mellowmint-site .contact-hero .container { max-width: 100%; }
 body.mellowmint-site .app-header { background: #f0f4ed; }
+body.mellowmint-site .app-catalog-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 32px;
+  align-items: start;
+}
+body.mellowmint-site .app-catalog-grid > div {
+  min-width: 0;
+  scroll-margin-top: 90px;
+}
+body.mellowmint-site .app-catalog-grid .app-card { margin-bottom: 0; }
+
+@media (min-width: 1200px) {
+  body.mellowmint-site .app-catalog-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: max-content 1fr;
+  }
+  body.mellowmint-site .app-catalog-grid #memory-by-seasons { grid-column: 1; grid-row: 1; }
+  body.mellowmint-site .app-catalog-grid #closet-flow { grid-column: 2; grid-row: 1 / span 2; }
+  body.mellowmint-site .app-catalog-grid #fun-with-crosswords { grid-column: 1; grid-row: 2; }
+}
+
 body.mellowmint-site .app-icon { background: white; box-shadow: none; }
 body.mellowmint-site .app-actions {
   display: flex;
