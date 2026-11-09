@@ -3,32 +3,32 @@ import { pathToFileURL } from 'node:url';
 
 const sampleRate = 48000;
 const duration = 30;
-const beatDuration = 60 / 96;
+const beatDuration = 60 / 120;
 const chords = [
-  [48, 60, 64, 67, 71],
-  [45, 60, 64, 69, 72],
+  [48, 60, 64, 67, 72],
   [41, 60, 65, 69, 72],
-  [43, 59, 62, 67, 71],
-  [40, 59, 64, 67, 71],
+  [43, 62, 67, 71, 74],
+  [48, 60, 64, 67, 72],
+  [41, 60, 65, 69, 72],
   [48, 60, 64, 67, 72]
 ];
 
 const frequency = midi => 440 * 2 ** ((midi - 69) / 12);
 
-const addNote = (channels, midi, start, length, volume, pan, sustained) => {
+const addNote = (channels, midi, start, length, volume, pan) => {
   const first = Math.floor(start * sampleRate);
   const count = Math.min(Math.floor(length * sampleRate), channels[0].length - first);
   const pitch = frequency(midi);
   const gains = [Math.sqrt((1 - pan) / 2), Math.sqrt((1 + pan) / 2)];
   for (let offset = 0; offset < count; offset++) {
     const time = offset / sampleRate;
-    const attack = Math.min(1, time / 0.025);
-    const release = Math.min(1, (length - time) / 0.6);
-    const envelope = attack * release * Math.exp(-time / (sustained ? 3.5 : 1.1));
+    const attack = Math.min(1, time / 0.008);
+    const release = Math.min(1, (length - time) / 0.12);
+    const envelope = attack * release * Math.exp(-time / 0.32);
     const phase = 2 * Math.PI * pitch * time;
     const tone = Math.sin(phase)
-      + 0.3 * Math.exp(-time * 2) * Math.sin(2 * phase)
-      + 0.12 * Math.exp(-time * 4) * Math.sin(3 * phase);
+      + 0.45 * Math.exp(-time * 2) * Math.sin(2 * phase)
+      + 0.2 * Math.exp(-time * 4) * Math.sin(3 * phase);
     const value = volume * envelope * tone;
     channels[0][first + offset] += value * gains[0];
     channels[1][first + offset] += value * gains[1];
@@ -42,8 +42,8 @@ const addPulse = (channels, start, accent) => {
     const time = offset / sampleRate;
     const attack = Math.min(1, time / 0.005);
     const value = accent
-      ? 0.055 * attack * Math.exp(-time * 30) * Math.sin(2 * Math.PI * (65 * time + 1.4 * (1 - Math.exp(-time * 30))))
-      : 0.012 * attack * Math.exp(-time * 65) * (Math.sin(2 * Math.PI * 1723 * time) + Math.sin(2 * Math.PI * 2381 * time));
+      ? 0.085 * attack * Math.exp(-time * 30) * Math.sin(2 * Math.PI * (65 * time + 1.4 * (1 - Math.exp(-time * 30))))
+      : 0.024 * attack * Math.exp(-time * 65) * (Math.sin(2 * Math.PI * 1723 * time) + Math.sin(2 * Math.PI * 2381 * time));
     channels[0][first + offset] += value;
     channels[1][first + offset] += value;
   }
@@ -67,16 +67,18 @@ export const createPromotionMusic = () => {
   const channels = [new Float64Array(frames), new Float64Array(frames)];
   chords.forEach((chord, scene) => {
     const start = scene * 5;
-    chord.slice(1).forEach((midi, index) => {
-      addNote(channels, midi - 12, start, 5, 0.04, (index - 1.5) / 3, true);
-    });
-    for (let beat = 0; beat < 8; beat++) {
+    for (let beat = 0; beat < 10; beat++) {
       const time = start + beat * beatDuration;
-      const melody = chord[1 + [0, 2, 1, 3, 2, 1, 3, 0][beat]];
-      addNote(channels, melody, time, 1.8, 0.09, beat % 2 === 0 ? -0.2 : 0.2, false);
+      const melody = chord[1 + [0, 1, 2, 1, 3, 2, 1, 2, 3, 0][beat]];
+      addNote(channels, melody + 12, time, 0.65, 0.13, beat % 2 === 0 ? -0.2 : 0.2);
+      if (beat % 2 === 1) {
+        chord.slice(1, 4).forEach((midi, index) => {
+          addNote(channels, midi, time + beatDuration / 2, 0.35, 0.045, (index - 1) / 3);
+        });
+      }
       addPulse(channels, time, beat % 2 === 0);
       addPulse(channels, time + beatDuration / 2, false);
-      if (beat % 2 === 0) addNote(channels, chord[0], time, 1, 0.05, 0, false);
+      if (beat % 2 === 0) addNote(channels, chord[0], time, 0.45, 0.075, 0);
     }
   });
   addAmbience(channels);
@@ -97,7 +99,7 @@ export const createPromotionMusic = () => {
   wav.writeUInt32LE(dataBytes, 40);
   for (let frame = 0; frame < frames; frame++) {
     const seconds = frame / sampleRate;
-    const fade = Math.min(1, seconds / 0.8, (duration - seconds) / 2);
+    const fade = Math.min(1, seconds / 0.15, (duration - seconds) / 0.8);
     for (let channel = 0; channel < 2; channel++) {
       const value = Math.round(channels[channel][frame] * fade * 32767);
       if (Math.abs(value) > 32767) throw new Error('Music exceeds the PCM audio range.');
