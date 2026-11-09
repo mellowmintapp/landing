@@ -3,6 +3,7 @@ import { pathToFileURL } from 'node:url';
 
 const sampleRate = 48000;
 const duration = 30;
+const beatDuration = 60 / 96;
 const chords = [
   [48, 60, 64, 67, 71],
   [45, 60, 64, 69, 72],
@@ -25,11 +26,40 @@ const addNote = (channels, midi, start, length, volume, pan, sustained) => {
     const release = Math.min(1, (length - time) / 0.6);
     const envelope = attack * release * Math.exp(-time / (sustained ? 3.5 : 1.1));
     const phase = 2 * Math.PI * pitch * time;
-    const tone = Math.sin(phase) + 0.3 * Math.sin(2 * phase) + 0.12 * Math.sin(3 * phase);
+    const tone = Math.sin(phase)
+      + 0.3 * Math.exp(-time * 2) * Math.sin(2 * phase)
+      + 0.12 * Math.exp(-time * 4) * Math.sin(3 * phase);
     const value = volume * envelope * tone;
     channels[0][first + offset] += value * gains[0];
     channels[1][first + offset] += value * gains[1];
   }
+};
+
+const addPulse = (channels, start, accent) => {
+  const first = Math.floor(start * sampleRate);
+  const count = Math.min(Math.floor(0.16 * sampleRate), channels[0].length - first);
+  for (let offset = 0; offset < count; offset++) {
+    const time = offset / sampleRate;
+    const attack = Math.min(1, time / 0.005);
+    const value = accent
+      ? 0.055 * attack * Math.exp(-time * 30) * Math.sin(2 * Math.PI * (65 * time + 1.4 * (1 - Math.exp(-time * 30))))
+      : 0.012 * attack * Math.exp(-time * 65) * (Math.sin(2 * Math.PI * 1723 * time) + Math.sin(2 * Math.PI * 2381 * time));
+    channels[0][first + offset] += value;
+    channels[1][first + offset] += value;
+  }
+};
+
+const addAmbience = channels => {
+  const delays = [[0.075, 0.14], [0.145, 0.08]];
+  channels.forEach(channel => {
+    const dry = channel.slice();
+    for (const [seconds, gain] of delays) {
+      const delay = Math.floor(seconds * sampleRate);
+      for (let frame = delay; frame < channel.length; frame++) {
+        channel[frame] += dry[frame - delay] * gain;
+      }
+    }
+  });
 };
 
 export const createPromotionMusic = () => {
@@ -38,13 +68,18 @@ export const createPromotionMusic = () => {
   chords.forEach((chord, scene) => {
     const start = scene * 5;
     chord.slice(1).forEach((midi, index) => {
-      addNote(channels, midi - 12, start, 5, 0.025, (index - 1.5) / 3, true);
+      addNote(channels, midi - 12, start, 5, 0.04, (index - 1.5) / 3, true);
     });
-    for (let beat = 0; beat < 4; beat++) {
-      addNote(channels, chord[1 + beat], start + beat * 1.25, 3, 0.075, beat % 2 === 0 ? -0.25 : 0.25, false);
-      addNote(channels, chord[0], start + beat * 1.25, 0.8, 0.03, 0, false);
+    for (let beat = 0; beat < 8; beat++) {
+      const time = start + beat * beatDuration;
+      const melody = chord[1 + [0, 2, 1, 3, 2, 1, 3, 0][beat]];
+      addNote(channels, melody, time, 1.8, 0.09, beat % 2 === 0 ? -0.2 : 0.2, false);
+      addPulse(channels, time, beat % 2 === 0);
+      addPulse(channels, time + beatDuration / 2, false);
+      if (beat % 2 === 0) addNote(channels, chord[0], time, 1, 0.05, 0, false);
     }
   });
+  addAmbience(channels);
 
   const dataBytes = frames * 4;
   const wav = Buffer.alloc(44 + dataBytes);
