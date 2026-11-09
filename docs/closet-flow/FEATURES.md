@@ -39,7 +39,7 @@ The store purchase screen confirms final pricing, billing terms, and any trial e
 
 ## Learn more
 
-- [App overview and screenshots](https://mellowmintapp.com/apps.html#closet-flow)
+- [App overview and screenshots](https://mellowmintapp.com/closet-flow.html)
 - [Closet Flow Privacy Policy](https://mellowmintapp.com/closet-flow-privacy.html)
 - [Closet Flow Terms of Service](https://mellowmintapp.com/closet-flow-terms.html)
 - [Contact support](mailto:mellowmint.app@gmail.com)

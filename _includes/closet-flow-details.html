@@ -1,0 +1,76 @@
+    <div id="closet-flow">
+      <div class="app-card">
+        <div class="app-header text-center">
+          <div class="app-icon">👗</div>
+          <span class="app-badge">Your closet. More possibilities.</span>
+          {% if include.standalone %}<h1>Closet Flow</h1>{% else %}<h2>Closet Flow</h2>{% endif %}
+          <p class="app-description">Less &ldquo;what should I wear?&rdquo; More outfits from what you already own. Turn your wardrobe into a visual closet, build looks, and keep your favorites within reach.</p>
+        </div>
+        <div class="carousel-container">
+          <p class="expand-hint"><i class="fa fa-search-plus" aria-hidden="true"></i> Tap an image to enlarge. Slides rotate every 7 seconds.</p>
+          <p class="text-center"><button id="closet-autoplay" type="button" class="btn btn-default" aria-controls="carouselCloset" aria-pressed="false">Pause slideshow</button></p>
+          <div id="carouselCloset" class="carousel slide" data-interval="false" aria-label="Closet Flow feature screenshots">
+            <ol class="carousel-indicators" aria-hidden="true">
+              {% for screenshot in site.data.closet_flow.screenshots %}
+              <li class="{% if forloop.first %}active{% endif %}" data-target="#carouselCloset" data-slide-to="{{ forloop.index0 }}"></li>
+              {% endfor %}
+            </ol>
+            <div class="carousel-inner">
+              {% for screenshot in site.data.closet_flow.screenshots %}
+              <div class="item{% if forloop.first %} active{% endif %}">
+                <img src="{{ '/img/portfolio/closet-flow/current/' | append: screenshot.image | relative_url }}" alt="{{ screenshot.alt | escape }}" width="768" height="1668" loading="lazy" decoding="async">
+                <div class="closet-slide-copy">
+                  <span class="closet-plan-label">{{ screenshot.plan | escape }}</span>
+                  <h3>{{ screenshot.title | escape }}</h3>
+                  <p>{{ screenshot.caption | escape }}</p>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+            <button class="left carousel-control" type="button" data-target="#carouselCloset" data-slide="prev" aria-label="Previous Closet Flow screenshot">
+              <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            </button>
+            <button class="right carousel-control" type="button" data-target="#carouselCloset" data-slide="next" aria-label="Next Closet Flow screenshot">
+              <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            </button>
+          </div>
+          <p class="closet-gallery-note">Actual app screens. Larger sample closets and outfit collections shown use Pro; the Free limits below still apply.</p>
+        </div>
+        <div class="promo-video">
+          <h3>Your closet, in 30 seconds</h3>
+          <video controls playsinline preload="none" poster="/videos/closet-flow/closet-flow-landscape.webp" aria-label="Closet Flow caption-led feature tour">
+            <source src="/videos/closet-flow/closet-flow-landscape.mp4" type="video/mp4">
+            <p><a href="/videos/closet-flow/closet-flow-landscape.mp4">Download the Closet Flow promotional video</a>.</p>
+          </video>
+          <p>Silent, caption-led tour: a visual closet, outfit planning, free favorites, saved looks, and reminders. Free includes 50 active items and 5 saved outfits; Pro adds unlimited space and weather tools.</p>
+          <p><a href="/videos/closet-flow/closet-flow-vertical.mp4" download>Download the vertical version</a> &middot; <a href="/videos/closet-flow/closet-flow-landscape.mp4" download>Download the landscape version</a></p>
+        </div>
+        <div class="app-features">
+          <h3>Get more from what you already own</h3>
+          <ul>
+            <li>A photo-led closet with colors, brands, categories, and occasion tags</li>
+            <li>Build and save looks, log outfit wears, and rediscover forgotten combinations</li>
+            <li>Favorite items, outfits, brands, and categories with quick-access filters</li>
+            <li>Wardrobe insights to explore your palette and spot outfit gaps</li>
+            <li>Work offline; cloud sync stays free when you sign in</li>
+            <li>Add photos or import from supported product links; not every retailer is supported</li>
+          </ul>
+          <h3>Start free. Grow into Pro.</h3>
+          <p><strong>Free:</strong> Up to 50 active clothing items and 5 saved outfits, the outfit builder, favorites, search, signed-in sync, and daily or weekly reminders.</p>
+          <p><strong>Pro:</strong> Room for your whole wardrobe, plus help deciding what to wear today.</p>
+          <ul>
+            <li>Unlimited clothing items and saved outfits</li>
+            <li>Today&rsquo;s weather and weather-matched outfit suggestions from your closet</li>
+            <li>Occasion ideas informed by your wardrobe and weather</li>
+            <li>Active Stylist morning and evening reminders with custom times</li>
+          </ul>
+          <p class="app-pricing">Closet Flow Pro: <strong>$4.99/month or $29.99/year.</strong> Final pricing and any trial eligibility are shown in the app store purchase screen.</p>
+          <p>Reminder messages refresh when you open the app. Morning weather nudges may use your recent weather check; they are not live forecasts.</p>
+          <p><a href="/closet-flow-privacy.html">Closet Flow Privacy Policy</a> &middot; <a href="/closet-flow-terms.html">Closet Flow Terms of Service</a></p>
+        </div>
+        <div class="app-actions text-center">
+          <span class="btn-app-store store-coming-soon" aria-disabled="true"><i class="fa fa-apple"></i> App Store — Coming Soon</span>
+          <span class="btn-google-play store-coming-soon" aria-disabled="true"><i class="fa fa-android"></i> Google Play — Coming Soon</span>
+        </div>
+      </div>
+    </div>

@@ -252,6 +252,17 @@ body.mellowmint-site .bg-dark .container,
 body.mellowmint-site .apps-hero .container,
 body.mellowmint-site .contact-hero .container { max-width: 100%; }
 body.mellowmint-site .app-header { background: #f0f4ed; }
+body.mellowmint-site section.app-detail-page {
+  max-width: 900px;
+  padding: 40px 20px 60px;
+}
+body.mellowmint-site .app-detail-page .app-header h1 {
+  font-size: 2em;
+  margin: 0 0 10px;
+}
+body.mellowmint-site .app-detail-page .app-card:hover {
+  transform: none;
+}
 body.mellowmint-site .app-catalog-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr);

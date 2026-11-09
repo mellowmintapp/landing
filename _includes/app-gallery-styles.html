@@ -1,0 +1,392 @@
+<style>
+  .apps-hero {
+    background: linear-gradient(135deg, #F05F40 0%, #e8491d 100%);
+    padding: 80px 0 60px;
+    color: white;
+    margin-bottom: 60px;
+  }
+
+  .apps-hero h1 {
+    font-size: 3em;
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-family: 'Fredoka', sans-serif;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  }
+
+  .apps-hero p {
+    font-size: 1.3em;
+    opacity: 1;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+  }
+
+  /* App Icon Styles */
+  .app-icon {
+    width: 100px;
+    height: 100px;
+    border-radius: 22px;
+    margin: 0 auto 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    background: linear-gradient(135deg, #F05F40 0%, #e8491d 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3em;
+  }
+
+  /* Lightbox Styles */
+  .lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.95);
+    overflow: auto;
+  }
+
+  .lightbox-content {
+    position: relative;
+    margin: 2% auto;
+    width: auto;
+    max-width: 90%;
+    max-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .lightbox-content img {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  }
+
+  .lightbox-close {
+    border: 0;
+    background: transparent;
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10000;
+    transition: all 0.3s ease;
+  }
+
+  .lightbox-close:hover {
+    color: #F05F40;
+    transform: scale(1.2);
+  }
+
+  .lightbox-nav {
+    border: 0;
+    background: transparent;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 50px;
+    cursor: pointer;
+    padding: 20px;
+    user-select: none;
+    transition: all 0.3s ease;
+  }
+
+  .lightbox-nav:hover {
+    color: #F05F40;
+    transform: translateY(-50%) scale(1.2);
+  }
+
+  .lightbox-prev {
+    left: 20px;
+  }
+
+  .lightbox-next {
+    right: 20px;
+  }
+
+  .lightbox-counter {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    background: rgba(0,0,0,0.5);
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 1em;
+  }
+
+  /* Click to expand hint */
+  .carousel-inner img {
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+  }
+
+  .carousel-inner img:hover {
+    opacity: 0.9;
+  }
+
+  .expand-hint {
+    text-align: center;
+    font-size: 0.85em;
+    color: #718096;
+    margin-top: 10px;
+    font-style: italic;
+  }
+
+  .expand-hint i {
+    margin-right: 5px;
+  }
+
+  .app-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    margin-bottom: 50px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .app-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+  }
+
+  .app-header {
+    padding: 30px 30px 20px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  }
+
+  .app-header h2 {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 2em;
+    margin: 0 0 10px;
+    color: #2d3748;
+  }
+
+  .app-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    background: rgba(240, 95, 64, 0.1);
+    color: #F05F40;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+
+  .app-description {
+    font-size: 1.1em;
+    color: #4a5568;
+    margin: 15px 0;
+  }
+
+  .carousel-container {
+    padding: 20px;
+    background: #f8f9fa;
+  }
+
+  .carousel-inner img {
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  }
+
+  #closet-flow .app-header {
+    background: linear-gradient(135deg, #f5effb 0%, #fff4e6 100%);
+  }
+
+  #closet-flow .carousel-container {
+    background: #f7f4fb;
+  }
+
+  #carouselCloset .carousel-inner img {
+    width: 68%;
+    max-width: 300px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+
+  #carouselCloset .carousel-indicators {
+    bottom: 0;
+    margin-bottom: 0;
+  }
+
+  #carouselCloset .closet-slide-copy {
+    text-align: center;
+    padding: 18px 12px 32px;
+    min-height: 170px;
+    color: #4a5568;
+  }
+
+  .closet-slide-copy h3 {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.2em;
+    color: #3b206d;
+    margin: 10px 0;
+  }
+
+  .closet-plan-label {
+    font-size: 0.85em;
+    font-weight: 600;
+    color: #3b206d;
+  }
+
+  #closet-flow .carousel-control {
+    color: #3b206d;
+    background: white;
+    border: 1px solid #d9cee9;
+    border-radius: 50%;
+    opacity: 1;
+    text-shadow: none;
+  }
+
+  #closet-flow .carousel-control:focus,
+  #closet-flow .carousel-inner img:focus {
+    outline: 3px solid #6d45a6;
+    outline-offset: 3px;
+  }
+
+  .closet-gallery-note {
+    text-align: center;
+    font-size: 0.85em;
+    color: #4a5568;
+    margin: 16px 0 0;
+  }
+
+  .app-features {
+    padding: 25px 40px;
+  }
+
+  .app-features h3 {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    color: #2d3748;
+  }
+
+  .app-features ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 25px;
+  }
+
+  .app-features li {
+    padding: 10px 0;
+    font-size: 1.05em;
+    color: #4a5568;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .app-features li:last-child {
+    border-bottom: none;
+  }
+
+  .app-features li:before {
+    content: "✓";
+    color: #48bb78;
+    font-weight: bold;
+    margin-right: 12px;
+    font-size: 1.2em;
+  }
+
+  .app-actions {
+    padding: 0 40px 35px;
+  }
+
+  .btn-app-store {
+    background: linear-gradient(135deg, #F05F40 0%, #e8491d 100%);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 1.05em;
+    border: none;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+  .btn-app-store:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(240, 95, 64, 0.4);
+    color: white;
+  }
+
+  .store-coming-soon,
+  .store-coming-soon:hover {
+    background: #718096;
+    box-shadow: none;
+    color: white;
+    cursor: default;
+    transform: none;
+  }
+
+  .btn-google-play {
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 1.05em;
+    border: none;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .btn-google-play:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(56, 239, 125, 0.4);
+    color: white;
+  }
+
+  .carousel-control {
+    background: none;
+    width: 40px;
+    height: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.7;
+  }
+
+  .carousel-control:hover {
+    opacity: 1;
+  }
+
+  .carousel-indicators li {
+    background-color: #cbd5e0;
+    border: none;
+  }
+
+  .carousel-indicators .active {
+    background: linear-gradient(135deg, #F05F40 0%, #e8491d 100%);
+  }
+
+  @media (max-width: 768px) {
+    .apps-hero h1 {
+      font-size: 2em;
+    }
+
+    .app-header h2 {
+      font-size: 1.5em;
+    }
+
+    .app-features,
+    .app-actions {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+</style>
