@@ -22,6 +22,8 @@ See what you own, build looks you love, and keep your favorites within reach.
 
 ### Closet Flow promotional screenshots
 
+Each app has a dedicated promotional page: [Closet Flow](./closet-flow.html), [Memory by Seasons](./memory-by-seasons.html), and [Fun with Crosswords](./fun-with-crosswords.html). Homepage Learn More links point to these pages; the public Closet Flow feature overview does too. Old app-specific `apps.html#...` links redirect to the corresponding page when JavaScript is available. The all-apps catalog remains available at [apps.html](./apps.html). Dedicated pages and the catalog reuse app details, gallery styles, and lightbox includes so features, store availability, and media stay consistent.
+
 The homepage's two Closet Flow cards and the app catalog use current, authentic app screens. The eight-screen catalog and its captions are maintained in [_data/closet_flow.yml](./_data/closet_flow.yml); the lightbox reads the rendered catalog, so its order cannot drift from the carousel.
 
 Optimized WebP copies live in [img/portfolio/closet-flow/current/](./img/portfolio/closet-flow/current/). Original user attachments are unchanged. Do not publish screenshots with personal names/avatars, developer plan controls, sync failures, or active keyboards. Location text in outfit previews is permitted. Larger example collections use Pro and are labeled as such; captions distinguish a feature's Free allowance from the sample account's plan.

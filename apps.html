@@ -76,7 +76,20 @@
 
   
     <main>
-      <style>
+      <script>
+  const appPages = new Map([
+    ['#closet-flow', "/closet-flow.html"],
+    ['#memory-by-seasons', "/memory-by-seasons.html"],
+    ['#fun-with-crosswords', "/fun-with-crosswords.html"]
+  ]);
+  const openAppPage = () => {
+    const destination = appPages.get(globalThis.location.hash);
+    if (destination) globalThis.location.replace(destination);
+  };
+  openAppPage();
+  globalThis.addEventListener('hashchange', openAppPage);
+</script>
+<style>
   .apps-hero {
     background: linear-gradient(135deg, #F05F40 0%, #e8491d 100%);
     padding: 80px 0 60px;
@@ -147,6 +160,8 @@
   }
 
   .lightbox-close {
+    border: 0;
+    background: transparent;
     position: absolute;
     top: 20px;
     right: 40px;
@@ -164,6 +179,8 @@
   }
 
   .lightbox-nav {
+    border: 0;
+    background: transparent;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -465,6 +482,7 @@
   }
 </style>
 
+
 <div class="apps-hero">
   <div class="container text-center">
     <h1>Our Apps</h1>
@@ -475,7 +493,7 @@
 <section class="container" style="padding-bottom: 80px;">
   <div class="app-catalog-grid">
     <!-- Memory by Seasons -->
-    <div id="memory-by-seasons">
+        <div id="memory-by-seasons">
       <div class="app-card">
         <div class="app-header text-center">
           <div class="app-icon">🎮</div>
@@ -569,8 +587,9 @@
         </div>
       </div>
     </div>
+
     <!-- Closet Flow -->
-    <div id="closet-flow">
+        <div id="closet-flow">
       <div class="app-card">
         <div class="app-header text-center">
           <div class="app-icon">👗</div>
@@ -723,8 +742,9 @@
         </div>
       </div>
     </div>
+
     <!-- Fun with Crosswords -->
-    <div id="fun-with-crosswords">
+        <div id="fun-with-crosswords">
       <div class="app-card">
         <div class="app-header text-center">
           <div class="app-icon">🧩</div>
@@ -797,16 +817,18 @@
         </div>
       </div>
     </div>
+
   </div>
 </section>
 
 <!-- Lightbox for Memory by Seasons -->
+
 <div id="lightbox-memory" class="lightbox">
-  <span class="lightbox-close" onclick="closeLightbox('memory')">&times;</span>
+  <button class="lightbox-close" type="button" aria-label="Close screenshot" onclick="closeLightbox('memory')">&times;</button>
   <div class="lightbox-content">
-    <span class="lightbox-nav lightbox-prev" onclick="changeImage('memory', -1)">&#10094;</span>
+    <button class="lightbox-nav lightbox-prev" type="button" aria-label="Previous screenshot" onclick="changeImage('memory', -1)">&#10094;</button>
     <img id="lightbox-img-memory" src="" alt="Screenshot">
-    <span class="lightbox-nav lightbox-next" onclick="changeImage('memory', 1)">&#10095;</span>
+    <button class="lightbox-nav lightbox-next" type="button" aria-label="Next screenshot" onclick="changeImage('memory', 1)">&#10095;</button>
   </div>
   <div class="lightbox-counter">
     <span id="lightbox-counter-memory"></span>
@@ -814,12 +836,14 @@
 </div>
 
 <!-- Lightbox for Closet Flow -->
+
+
 <div id="lightbox-closet" class="lightbox">
-  <span class="lightbox-close" onclick="closeLightbox('closet')">&times;</span>
+  <button class="lightbox-close" type="button" aria-label="Close screenshot" onclick="closeLightbox('closet')">&times;</button>
   <div class="lightbox-content">
-    <span class="lightbox-nav lightbox-prev" onclick="changeImage('closet', -1)">&#10094;</span>
+    <button class="lightbox-nav lightbox-prev" type="button" aria-label="Previous screenshot" onclick="changeImage('closet', -1)">&#10094;</button>
     <img id="lightbox-img-closet" src="" alt="Screenshot">
-    <span class="lightbox-nav lightbox-next" onclick="changeImage('closet', 1)">&#10095;</span>
+    <button class="lightbox-nav lightbox-next" type="button" aria-label="Next screenshot" onclick="changeImage('closet', 1)">&#10095;</button>
   </div>
   <div class="lightbox-counter">
     <span id="lightbox-counter-closet"></span>
@@ -827,17 +851,20 @@
 </div>
 
 <!-- Lightbox for Fun with Crosswords -->
+
+
 <div id="lightbox-crosswords" class="lightbox">
-  <span class="lightbox-close" onclick="closeLightbox('crosswords')">&times;</span>
+  <button class="lightbox-close" type="button" aria-label="Close screenshot" onclick="closeLightbox('crosswords')">&times;</button>
   <div class="lightbox-content">
-    <span class="lightbox-nav lightbox-prev" onclick="changeImage('crosswords', -1)">&#10094;</span>
+    <button class="lightbox-nav lightbox-prev" type="button" aria-label="Previous screenshot" onclick="changeImage('crosswords', -1)">&#10094;</button>
     <img id="lightbox-img-crosswords" src="" alt="Screenshot">
-    <span class="lightbox-nav lightbox-next" onclick="changeImage('crosswords', 1)">&#10095;</span>
+    <button class="lightbox-nav lightbox-next" type="button" aria-label="Next screenshot" onclick="changeImage('crosswords', 1)">&#10095;</button>
   </div>
   <div class="lightbox-counter">
     <span id="lightbox-counter-crosswords"></span>
   </div>
 </div>
+
 
 <script>
   const carouselIds = {
@@ -944,9 +971,9 @@
     const crosswordsLightbox = document.getElementById('lightbox-crosswords');
 
     let activeApp = null;
-    if (memoryLightbox.style.display === 'block') activeApp = 'memory';
-    else if (closetLightbox.style.display === 'block') activeApp = 'closet';
-    else if (crosswordsLightbox.style.display === 'block') activeApp = 'crosswords';
+    if (memoryLightbox?.style.display === 'block') activeApp = 'memory';
+    else if (closetLightbox?.style.display === 'block') activeApp = 'closet';
+    else if (crosswordsLightbox?.style.display === 'block') activeApp = 'crosswords';
 
     if (activeApp) {
       if (e.key === 'ArrowLeft') {
@@ -969,6 +996,7 @@
     });
   });
 </script>
+
 
     </main>
   
