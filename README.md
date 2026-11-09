@@ -32,18 +32,19 @@ Keep the other MellowMint apps intact. Do not advertise universal product-link i
 
 ### Promotional videos
 
-Two silent, caption-led, approximately 30-second H.264 MP4s are available in [videos/closet-flow/](./videos/closet-flow/):
+Two caption-led, approximately 30-second H.264 MP4s with gentle original instrumental music are available in [videos/closet-flow/](./videos/closet-flow/):
 - [Vertical, 1080 x 1920](./videos/closet-flow/closet-flow-vertical.mp4) for social posts
 - [Landscape, 1920 x 1080](./videos/closet-flow/closet-flow-landscape.mp4) for the website or video platforms
 
-The catalog embeds the landscape version with controls and a lightweight poster. It does not autoplay or preload the video. Captions are drawn into the video, and the adjacent text provides a readable summary. There is no music, voiceover, or claim of store availability.
+The catalog and dedicated page embed the landscape version with controls and a lightweight poster. It does not autoplay or preload the video. Captions are drawn into the video, and the adjacent text provides a readable summary. The soundtrack is an original, synthesized piano-style arrangement with a gentle pulse, not a sampled recording or licensed song. There is no voiceover or claim of store availability. Narration is deferred; music and mute/volume controls are available now.
 
 The editable source is [docs/closet-flow/promo.html](./docs/closet-flow/promo.html) and [promo.js](./docs/closet-flow/promo.js), excluded from the public Jekyll build. To regenerate:
 1. Serve the repository root locally (for example, `python3 -m http.server 4177 --bind 127.0.0.1`).
 2. Open `http://127.0.0.1:4177/docs/closet-flow/promo.html` in a Chromium browser supporting H.264 `avc3` MediaRecorder.
 3. Run `await recordPromotion('vertical')` or `await recordPromotion('landscape')` in the browser console, or through Playwright's `page.evaluate`. Keep the page foregrounded for the entire recording.
-4. Optimize each captured MP4 before publishing: `ffmpeg -i captured.mp4 -c:v libx264 -crf 20 -preset fast -pix_fmt yuv420p -movflags +faststart -an published.mp4`. This converts the fragmented browser capture to a broadly compatible MP4 with complete duration metadata available immediately.
-5. Save the optimized MP4 and downloaded WebP poster to the video folder. Run formats sequentially, not concurrently.
+4. Generate the original soundtrack with Node: `node docs/closet-flow/promo-music.mjs /tmp/closet-flow-music.wav` (use a new output path). Encode the reusable audio: `ffmpeg -i /tmp/closet-flow-music.wav -c:a aac -b:a 160k -ar 48000 videos/closet-flow/closet-flow-music.m4a`.
+5. Optimize each captured MP4 and add music before publishing: `ffmpeg -i captured.mp4 -i videos/closet-flow/closet-flow-music.m4a -map 0:v:0 -map 1:a:0 -c:v libx264 -crf 20 -preset fast -pix_fmt yuv420p -c:a copy -movflags +faststart published.mp4`. This converts the fragmented browser capture to a broadly compatible MP4 with complete duration metadata available immediately. For already optimized videos, use `-c:v copy` instead of re-encoding; preserve the full final video frame rather than trimming to the audio duration.
+6. Save the optimized MP4 and downloaded WebP poster to the video folder. Run formats sequentially, not concurrently. Remove the temporary WAV after exporting. Keep the reusable music asset for future regenerations.
 
 The renderer checks duration and dimensions before exporting. The published versions were captured using Playwright, optimized with FFmpeg, and checked by full decode and browser frame sampling. Verify all six scenes, including the final frame, after regenerating; a successful capture alone does not prove a playable export.
 
